@@ -1,0 +1,4 @@
+[init]
+	defaultBranch = main
+[gitflow "branch"]
+	master = main

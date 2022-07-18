@@ -1,0 +1,14 @@
+[user]
+	name = Junya Okabe
+	email = okabe.junya.qj@alumni.tsukuba.ac.jp
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[init]
+	defaultBranch = main
+[core]
+	excludesfile = /Users/okabejunya/.gitignore_global
+[gitflow "branch"]
+	master = main
