@@ -10,6 +10,7 @@ alias tree='tree -C'
 alias q='exit'
 alias :wq='exit'
 alias pwdc='pwd | tr -d "\n" | pbcopy'
+alias mysql.server stop='brew services stop mysql'
 
 alias g='git'
 alias ga='git add'
