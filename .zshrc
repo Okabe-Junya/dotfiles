@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
 # >>> alias >>>
 alias ll='ls -Gl'
 alias ls='ls -G'
@@ -10,6 +12,7 @@ alias tree='tree -C'
 alias q='exit'
 alias :wq='exit'
 alias pwdc='pwd | tr -d "\n" | pbcopy'
+alias mysql.server stop='brew services stop mysql'
 
 alias g='git'
 alias ga='git add'
@@ -27,8 +30,13 @@ alias -g G='| grep --color=auto'
 export PS1="%~ "
 export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
 eval "$(rbenv init -)"
 fpath=(~/.zsh $fpath)
+
+export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 
 # >>> source >>>
 source ~/.zsh/git-prompt.sh
@@ -62,4 +70,6 @@ GIT_PS1_SHOWUPSTREAM=auto
 setopt PROMPT_SUBST
 PS1='%F{green}%n@%m%f: %F{cyan}%~%f %F{red}$(__git_ps1 "(%s)")%f
 \$ '
-export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
