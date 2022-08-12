@@ -1,5 +1,7 @@
+# >>> fig >>>
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
+
 # >>> alias >>>
 alias ll='ls -Gl'
 alias ls='ls -G'
@@ -71,5 +73,6 @@ setopt PROMPT_SUBST
 PS1='%F{green}%n@%m%f: %F{cyan}%~%f %F{red}$(__git_ps1 "(%s)")%f
 \$ '
 
+# >>> fig >>>
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
