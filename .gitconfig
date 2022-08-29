@@ -12,3 +12,5 @@
 	excludesfile = /Users/okabejunya/.gitignore_global
 [gitflow "branch"]
 	master = main
+[push]
+	autoSetupRemote = true
