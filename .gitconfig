@@ -9,7 +9,7 @@
 [init]
 	defaultBranch = main
 [core]
-	excludesfile = /Users/okabejunya/.gitignore_global
+	excludesfile = /Users/okabejunya/.gitignore
 [gitflow "branch"]
 	master = main
 [push]
