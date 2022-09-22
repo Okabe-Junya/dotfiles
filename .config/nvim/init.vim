@@ -5,7 +5,22 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/plugged')
-    " Use release branch (recommend)
+    " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+    Plug 'junegunn/vim-easy-align'
+
+    " Any valid git URL is allowed
+    Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+
+    " Multiple Plug commands can be written in a single line using | separators
+    Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+
+    " Plugin options
+    Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
+
+    " Plugin outside ~/.vim/plugged with post-update hook
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+    " coc （自動保管）
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     " git 関連
