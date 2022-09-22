@@ -1,5 +1,4 @@
-call plug#begin('~/.config/nvim/plugged')
-    Plug 'preservim/nerdtree'
-call plug#end()
-
-nmap <C-af> :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
