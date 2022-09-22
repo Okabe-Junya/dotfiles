@@ -38,6 +38,8 @@ fpath=(~/.zsh $fpath)
 
 export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+export GOPATH=$HOME/go 
+export PATH=$GOPATH/bin:$PATH
 
 # >>> source >>>
 source ~/.zsh/git-prompt.sh
@@ -74,7 +76,7 @@ PS1='%F{green}%n@%m%f: %F{cyan}%~%f %F{red}$(__git_ps1 "(%s)")%f
 
 # >>> fig >>>
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
