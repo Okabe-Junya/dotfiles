@@ -2,6 +2,7 @@
 
 # Compiled Python files
 *.pyc
+
 # nvim submodules
 .config/nvim/plugged
 
