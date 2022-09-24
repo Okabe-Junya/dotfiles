@@ -4,3 +4,7 @@
 *.pyc
 # nvim submodules
 .config/nvim/plugged
+
+# nvim node_modules
+.config/coc/extensions/*
+!.config/coc/extensions/package.json
