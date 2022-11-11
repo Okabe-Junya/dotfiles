@@ -38,8 +38,9 @@ fpath=(~/.zsh $fpath)
 
 export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
-export GOPATH=$HOME/go 
+export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
+export NVM_DIR="$HOME/.nvm"
 
 # >>> source >>>
 source ~/.zsh/git-prompt.sh
@@ -72,6 +73,10 @@ GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUPSTREAM=auto
 setopt PROMPT_SUBST
 PS1='%F{green}%n@%m%f: %F{cyan}%~%f %F{red}$(__git_ps1 "(%s)")%f $ '
+
+# tsconfig
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
 
 # >>> fig >>>
 
