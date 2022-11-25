@@ -10,6 +10,7 @@
 	defaultBranch = main
 [core]
 	excludesfile = ~/.gitignore
+	editor = nvim
 [gitflow "branch"]
 	master = main
 [push]
