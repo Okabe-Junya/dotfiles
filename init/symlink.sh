@@ -1,6 +1,13 @@
 rm -f ~/Brewfile
 ln -s ~/.dotfiles/Brewfile ~/Brewfile
 
+mkdir -p ~/Library/Application\ Support/Code/User
+rm -f ~/Library/Application\ Support/Code/User/settings.json
+ln -s ~/.dotfiles/code/settings.json ~/Library/Application\ Support/Code/User/settings.json
+
+rm -f ~/.latexmkrc
+ln -s ~/.dotfiles/.config/latex/latexmkrc ~/.latexmkrc
+
 rm -f ~/.gitconfig
 ln -s ~/.dotfiles/git/.gitconfig ~/.gitconfig
 
