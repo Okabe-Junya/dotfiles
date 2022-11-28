@@ -1,13 +1,10 @@
-.PHONY : init clean
+.PHONY : init clean build-osx build-linux check-scripts check-scripts-all
 
 init:
 	@echo "Initializing..."
 
-
 build-osx:
 	@echo "Building for OSX..."
-
-
 
 build-linux:
 	@echo "Building for Linux..."
