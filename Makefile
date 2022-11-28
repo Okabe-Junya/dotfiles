@@ -6,3 +6,10 @@ init:
 
 clean:
 	@echo "Cleaning..."
+
+
+check-scripts:
+	shellcheck -e SC2148 **/*.sh
+
+check-scripts-all:
+	shellcheck **/*.sh
