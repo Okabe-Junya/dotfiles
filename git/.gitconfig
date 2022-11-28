@@ -9,7 +9,7 @@
 [init]
 	defaultBranch = main
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore_global
 	editor = nvim
 [gitflow "branch"]
 	master = main

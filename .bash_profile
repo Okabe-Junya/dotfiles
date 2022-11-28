@@ -1,3 +1,6 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/bash_profile.pre.bash" ]] && builtin source "$HOME/.fig/shell/bash_profile.pre.bash"
+
 # >>> alias >>>
 alias ll='ls -Gl'
 alias ls='ls -G'
@@ -22,3 +25,6 @@ alias gs='git status'
 
 alias -g C='| pbcopy'
 alias -g G='| grep --color=auto'
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/bash_profile.post.bash" ]] && builtin source "$HOME/.fig/shell/bash_profile.post.bash"
