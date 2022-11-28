@@ -20,5 +20,6 @@ jobs:
       - name: Differential ShellCheck
         uses: redhat-plumbers-in-action/differential-shellcheck@v3
         with:
-          severity: warning
+          ignored-codes: SC2148
+          severity: error
           token: ${{ secrets.GITHUB_TOKEN }}
