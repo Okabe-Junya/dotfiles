@@ -1,3 +1,4 @@
+# シェル上の表示の設定
 zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
 autoload -Uz compinit && compinit
 GIT_PS1_SHOWDIRTYSTATE=true
