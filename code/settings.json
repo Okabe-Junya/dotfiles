@@ -135,7 +135,8 @@
         "markdown": true,
         "go": true,
         "ruby": true,
-        "typescript": false
+        "typescript": false,
+        "python": true
     },
     "[markdown]": {
         "editor.defaultFormatter": "yzhang.markdown-all-in-one"
