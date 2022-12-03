@@ -1,3 +1,4 @@
+# unix command aliases
 alias ll='ls -Gl'
 alias ls='ls -G'
 alias sl='ls -G'
@@ -10,8 +11,10 @@ alias treep='tree -C -p --gitignore'
 alias q='exit'
 alias :wq='exit'
 alias pwdc='pwd | tr -d "\n" | pbcopy'
+
 alias mysql.server stop='brew services stop mysql'
 
+# git aliases
 alias g='git'
 alias ga='git add'
 alias gb='git branch'
@@ -20,6 +23,6 @@ alias gd='git diff'
 alias gp='git push'
 alias gs='git status'
 
-# >>> global alias >>>
+# global aliases
 alias -g C='| pbcopy'
 alias -g G='| grep --color=auto'

@@ -2,6 +2,7 @@
 
 init:
 	@echo "Initializing..."
+	./init/symlink.sh
 
 build-osx:
 	@echo "Building for OSX..."
