@@ -1,0 +1,7 @@
+version: "3"
+
+services:
+  osx-build:
+    build:
+      context: .
+      dockerfile: Dockerfile
