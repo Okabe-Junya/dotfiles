@@ -1,7 +1,7 @@
 # unix command aliases
-alias ll='lsd -Gl'
-alias ls='lsd -G'
-alias la='lsd -G -a'
+alias ll='lsd -l'
+alias ls='lsd'
+alias la='lsd -a'
 alias rm='rm -i'
 alias ..='cd ..'
 alias ...='cd ../..'
