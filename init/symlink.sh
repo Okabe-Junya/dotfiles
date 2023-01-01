@@ -1,4 +1,3 @@
-# Brewfile
 rm -f ~/Brewfile
 ln -s ~/.dotfiles/Brewfile ~/Brewfile
 
