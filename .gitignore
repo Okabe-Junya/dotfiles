@@ -13,5 +13,5 @@
 .config/coc/extensions/*
 !.config/coc/extensions/package.json
 
-# zenn-cli
-.config/configstore/zenn-cli.json
+# some jsons
+.config/configstore/
