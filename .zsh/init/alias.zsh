@@ -14,7 +14,7 @@ alias pwdc='pwd | tr -d "\n" | pbcopy'
 alias mysql.server stop='brew services stop mysql'
 
 # glow (Markdown viewer)
-alias md='glow -p -'
+alias -g mdpreview='glow -p -'
 
 # git aliases
 alias g='git'
