@@ -33,6 +33,9 @@ call plug#begin('~/.config/nvim/plugged')
 
     " nerdtree
     Plug 'preservim/nerdtree'
+
+    " :terminalのラッパー
+    Plug 'kassio/neoterm'
 call plug#end()
 
 

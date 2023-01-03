@@ -1,8 +1,7 @@
 # unix command aliases
-alias ll='ls -Gl'
-alias ls='ls -G'
-alias sl='ls -G'
-alias la='ls -GA'
+alias ll='lsd -l'
+alias ls='lsd'
+alias la='lsd -a'
 alias rm='rm -i'
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -13,6 +12,9 @@ alias :wq='exit'
 alias pwdc='pwd | tr -d "\n" | pbcopy'
 
 alias mysql.server stop='brew services stop mysql'
+
+# glow (Markdown viewer)
+alias -g mdpreview='glow -p -'
 
 # git aliases
 alias g='git'
