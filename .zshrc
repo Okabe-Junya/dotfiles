@@ -14,6 +14,7 @@ if [ -d $ZSH_INIT_DIR ] && [ -r $ZSH_INIT_DIR ] && [ -x $ZSH_INIT_DIR ]; then
 fi
 
 source "${FIG_DIR}/post.zsh"
+source "${ZSH_INIT_DIR}/alias.zsh"
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

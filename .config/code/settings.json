@@ -125,7 +125,7 @@
         "editor.defaultFormatter": "vscode.json-language-features"
     },
     // Python
-    "python.defaultInterpreterPath": "/Users/junyaokabe/.pyenv/versions/miniforge3-4.10.3-10/envs/Kaggle/bin/python",
+    "python.defaultInterpreterPath": "/Users/junyaokabe/.pyenv/versions/miniforge3-4.10.3-10/envs/CP/bin/python",
     //
     // GitHub Copilot
     "github.copilot.enable": {

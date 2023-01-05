@@ -1,7 +1,7 @@
 # unix command aliases
+alias la='lsd -a'
 alias ll='lsd -l'
 alias ls='lsd'
-alias la='lsd -a'
 alias rm='rm -i'
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -10,8 +10,6 @@ alias treep='tree -C -p --gitignore'
 alias q='exit'
 alias :wq='exit'
 alias pwdc='pwd | tr -d "\n" | pbcopy'
-
-alias mysql.server stop='brew services stop mysql'
 
 # glow (Markdown viewer)
 alias -g mdpreview='glow -p -'
