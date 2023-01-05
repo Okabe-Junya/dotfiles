@@ -8,7 +8,7 @@ permissions:
   contents: read
 
 jobs:
-  test:
+  shellcheck:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,6 +20,5 @@ jobs:
       - name: Differential ShellCheck
         uses: redhat-plumbers-in-action/differential-shellcheck@v3
         with:
-          ignored-codes: SC2148
           severity: error
           token: ${{ secrets.GITHUB_TOKEN }}
