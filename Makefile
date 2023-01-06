@@ -1,17 +1,14 @@
-.PHONY : init clean build-osx build-linux check-scripts check-scripts-all
+.PHONY : init clean build check-scripts check-scripts-all
 
 init:
 	@echo "Initializing..."
 	./init/symlink.sh
 
-build-osx: init
+build: init
 	@echo "Building for OSX..."
+	./init/init.sh
 	./init/brew.sh
-	brew bundle --file Brewfile
 	./init/pyenv.sh
-
-build-linux: init
-	@echo "Building for Linux..."
 
 check-scripts:
 	shellcheck -e SC2148 **/*.sh
