@@ -8,6 +8,7 @@ build-osx: init
 	@echo "Building for OSX..."
 	./init/brew.sh
 	brew bundle --file Brewfile
+	./init/pyenv.sh
 
 build-linux: init
 	@echo "Building for Linux..."
@@ -20,3 +21,7 @@ check-scripts-all:
 
 clean:
 	@echo "Cleaning..."
+
+clean_up:
+	@echo "Brew Cleaning up..."
+	brew bundle cleanup --force --file Brewfile
