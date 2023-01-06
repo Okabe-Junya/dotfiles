@@ -13,5 +13,9 @@
 .config/coc/extensions/*
 !.config/coc/extensions/package.json
 
+# iterm2 config
+.config/iterm2/AppSupport
+
 # some jsons
 .config/configstore/
+Brewfile.lock.json

@@ -4,10 +4,12 @@ init:
 	@echo "Initializing..."
 	./init/symlink.sh
 
-build-osx:
+build-osx: init
 	@echo "Building for OSX..."
+	./init/brew.sh
+	brew bundle --file Brewfile
 
-build-linux:
+build-linux: init
 	@echo "Building for Linux..."
 
 check-scripts:
