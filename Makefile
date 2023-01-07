@@ -9,7 +9,7 @@ build: init
 	./init/init.sh
 	./init/brew.sh
 	./init/pyenv.sh
-
+	./init/code_extensions.sh
 check-scripts:
 	shellcheck -e SC2148 **/*.sh
 
