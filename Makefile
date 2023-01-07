@@ -3,10 +3,10 @@
 init:
 	@echo "Initializing..."
 	./init/symlink.sh
+	./init/init.sh
 
 build: init
 	@echo "Building for OSX..."
-	./init/init.sh
 	./init/brew.sh
 	./init/pyenv.sh
 	./init/code_extensions.sh
