@@ -1,5 +1,7 @@
 .PHONY : init clean build check-scripts check-scripts-all
 
+.DEFAULT_GOAL := build
+
 init:
 	@echo "Initializing..."
 	./init/symlink.sh
