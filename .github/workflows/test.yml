@@ -17,4 +17,7 @@ jobs:
       - name: "Clone Repository"
         run: git clone https://github.com/Okabe-Junya/dotfiles.git
       - name: "Initialize"
-        run: make
+        run: |
+          echo ${{ github.workspace }}
+          ls -la
+          make
