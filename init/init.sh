@@ -36,6 +36,3 @@ else
         echo "Homebrew for Intel is already installed!"
     fi
 fi
-
-source ~/.dotfiles/.zsh/init/arch.sh
-

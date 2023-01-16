@@ -19,7 +19,7 @@ rm -f ~/.gitignore_global
 ln -s ~/.dotfiles/git/.gitignore_global ~/.gitignore_global
 
 # .config
-rm -f ~/.config
+rm -rf ~/.config
 ln -s ~/.dotfiles/.config ~/.config
 
 # .bash_profile
