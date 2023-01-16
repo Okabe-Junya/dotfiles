@@ -1,6 +1,6 @@
 .PHONY : init clean build check-scripts check-scripts-all
 
-.DEFAULT_GOAL := build
+.DEFAULT_GOAL := build-minimal
 
 init:
 	@echo "Initializing..."
