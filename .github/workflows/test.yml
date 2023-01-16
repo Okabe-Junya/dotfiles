@@ -10,7 +10,7 @@ on:
 jobs:
   test:
     runs-on: macos-latest
-    timeout-minutes: 60
+    timeout-minutes: 120
     steps:
       - name: "Checkout Repository"
         uses: actions/checkout@v2
@@ -19,5 +19,5 @@ jobs:
       - name: "Move Directory"
         run: mv dotfiles ~/dotfiles
       - name: "Initialize"
-        run: |
-          make
+        run: make
+
