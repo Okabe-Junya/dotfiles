@@ -21,9 +21,11 @@ build-minimal: init
 
 check-scripts:
 	shellcheck -e SC2148 **/*.sh
+	flake8 **/*.py
 
-check-scripts-all:
-	shellcheck **/*.sh
+format: lint
+	shfmt -w -i 4 **/*.sh
+	black **/*.py
 
 clean:
 	@echo "Cleaning..."
