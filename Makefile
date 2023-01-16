@@ -36,4 +36,4 @@ clean_up:
 
 clean_up_min:
 	@echo "Brew Cleaning up..."
-	brew bundle cleanup --force --file ~/.dotfiles/init/min/Brewfile
+	brew bundle cleanup --force --file ~/dotfiles/init/min/Brewfile
