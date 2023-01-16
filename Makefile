@@ -33,3 +33,7 @@ clean:
 clean_up:
 	@echo "Brew Cleaning up..."
 	brew bundle cleanup --force --file Brewfile
+
+clean_up_min:
+	@echo "Brew Cleaning up..."
+	brew bundle cleanup --force --file ~/.dotfiles/init/min/Brewfile
