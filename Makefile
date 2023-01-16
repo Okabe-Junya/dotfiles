@@ -12,6 +12,13 @@ build: init
 	./init/brew.sh
 	./init/pyenv.sh
 	./init/code_extensions.sh
+
+build-minimal: init
+	@echo "Building minimal for OSX..."
+	./init/brew_min.sh
+	./init/pyenv.sh
+	./init/code_extensions.sh
+
 check-scripts:
 	shellcheck -e SC2148 **/*.sh
 
