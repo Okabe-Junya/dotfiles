@@ -20,6 +20,4 @@ jobs:
         run: mv dotfiles ~/dotfiles
       - name: "Initialize"
         run: |
-          echo ${{ github.workspace }}
-          ls -la
           make
