@@ -1,6 +1,10 @@
 rm -f ~/Brewfile
 ln -s ~/dotfiles/Brewfile ~/Brewfile
 
+rm -rf ~/.build/brew
+mkdir -p ~/.build/brew
+ln -s ~/dotfiles/init/build/brew/Brewfile ~/.build/brew/Brewfile
+
 # code/settings.json
 mkdir -p ~/Library/Application\ Support/Code/User
 rm -f ~/Library/Application\ Support/Code/User/settings.json
