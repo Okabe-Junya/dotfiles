@@ -1,3 +1,2 @@
-eval "ls -la"
-eval "ls -la ~/.build"
+eval "cat ~/.build/brew/Brewfile"
 eval "brew bundle --file ~/.build/brew/Brewfile"
