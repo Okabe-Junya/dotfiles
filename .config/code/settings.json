@@ -125,7 +125,7 @@
         "editor.defaultFormatter": "vscode.json-language-features"
     },
     // Python
-    "python.defaultInterpreterPath": "/Users/junyaokabe/.pyenv/versions/miniforge3-4.10.3-10/envs/CP/bin/python",
+    "python.defaultInterpreterPath": "/Users/junyaokabe/.pyenv/versions/3.9.13/bin/python",
     //
     // GitHub Copilot
     "github.copilot.enable": {
@@ -189,4 +189,9 @@
     "[cpp]": {
         "editor.defaultFormatter": "ms-vscode.cpptools"
     },
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
+    "julia.symbolCacheDownload": true,
+    "julia.enableTelemetry": true,
 }
