@@ -34,6 +34,14 @@ ln -s ~/dotfiles/.bash_profile ~/.bash_profile
 rm -f ~/.zsh
 ln -s ~/dotfiles/.zsh ~/.zsh
 
+# .zshenv
+rm -f ~/.zshenv
+ln -s ~/dotfiles/.zshenv ~/.zshenv
+
+# .zprofile
+rm -f ~/.zprofile
+ln -s ~/dotfiles/.zprofile ~/.zprofile
+
 # .zshrc
 rm -f ~/.zshrc
 ln -s ~/dotfiles/.zshrc ~/.zshrc
