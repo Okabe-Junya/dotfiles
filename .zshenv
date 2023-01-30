@@ -2,11 +2,8 @@
 ZSHENV_INIT_DIR="${HOME}/.zsh/init/zshenv"
 
 # Pathの追加
-
 source "${ZSHENV_INIT_DIR}/export.zsh"
+source "${ZSHENV_INIT_DIR}/arch.zsh"
 
-if [ -d $ZSHENV_INIT_DIR ] && [ -r $ZSHENV_INIT_DIR ] && [ -x $ZSHENV_INIT_DIR ]; then
-    for file in ${ZSHENV_INIT_DIR}/*.zsh; do
-        [ -r $file ] && source $file
-    done
-fi
+# 仮想環境の初期化
+source "${ZSHENV_INIT_DIR}/virtual_env.zsh"
