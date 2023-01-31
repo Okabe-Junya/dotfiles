@@ -132,7 +132,7 @@
         "*": true,
         "yaml": true,
         "plaintext": false,
-        "markdown": true,
+        "markdown": false,
         "go": true,
         "ruby": true,
         "typescript": false,
