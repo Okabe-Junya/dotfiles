@@ -1,1 +1,1 @@
-alias brew='PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin brew'
+# 'eval $(/opt/homebrew/bin/brew shellenv)'
