@@ -1,0 +1,192 @@
+{
+    // General
+    "workbench.colorTheme": "GitHub Dark Default",
+    "editor.inlineSuggest.enabled": true,
+    "editor.wordWrap": "on",
+    "redhat.telemetry.enabled": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "bracket-pair-colorizer-2.depreciation-notice": false,
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    // "editor.formatOnSave": true,
+    "terminal.integrated.inheritEnv": false,
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "vsicons.dontShowNewVersionMessage": true,
+    //
+    // files excluded from workspace
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/bin": true,
+        "**/*.o": true,
+        "**/*.obj": true,
+        "**/*.ilk": true,
+        "**/*.pdb": true,
+        "**/*.idb": true,
+        "**/*.dll": true
+    },
+    //
+    // plain text
+    "[txt]": {
+        "editor.unicodeHighlight.ambiguousCharacters": false,
+        "editor.unicodeHighlight.invisibleCharacters": false,
+        "editor.wordWrap": "bounded",
+        "editor.wordWrapColumn": 66,
+        "editor.wrappingIndent": "none",
+        "editor.minimap.enabled": false,
+        "editor.lineNumbers": "on",
+        "editor.occurrencesHighlight": false,
+        "editor.renderLineHighlight": "none",
+        "editor.fontFamily": "YuGothic, 'Yu Gothic'",
+        "editor.fontSize": 18,
+        "editor.lineHeight": 32
+    },
+    //
+    // C/C++ formatter
+    "C_Cpp.clang_format_style": "{BasedOnStyle: Google, IndentWidth: 4}",
+    // Latex
+    // ---------- Language ----------
+    "[tex]": {
+        // スニペット補完中にも補完を使えるようにする
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        // インデント幅を2にする
+        "editor.tabSize": 2
+    },
+    "[latex]": {
+        // スニペット補完中にも補完を使えるようにする
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        // インデント幅を2にする
+        "editor.tabSize": 2
+    },
+    "[bibtex]": {
+        // インデント幅を2にする
+        "editor.tabSize": 2
+    },
+    // ---------- LaTeX Workshop ----------
+    // 使用パッケージのコマンドや環境の補完を有効にする
+    "latex-workshop.intellisense.package.enabled": true,
+    // 生成ファイルを削除するときに対象とするファイル
+    // デフォルト値に "*.synctex.gz" を追加
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc",
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.ist",
+        "*.fls",
+        "*.log",
+        "*.fdb_latexmk",
+        "*.snm",
+        "*.nav",
+        "*.dvi",
+        "*.synctex.gz"
+    ],
+    // 生成ファイルを "out" ディレクトリに吐き出す
+    "latex-workshop.latex.outDir": "out",
+    // ビルドのレシピ
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk",
+            "tools": [
+                "latexmk"
+            ]
+        },
+    ],
+    // ビルドのレシピに使われるパーツ
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-silent",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+        },
+    ],
+    "latex-workshop.view.pdf.viewer": "tab",
+    //
+    //
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    // Python
+    "python.defaultInterpreterPath": "/Users/junyaokabe/.pyenv/versions/miniforge3-4.10.3-10/envs/CP/bin/python",
+    //
+    // GitHub Copilot
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": true,
+        "plaintext": false,
+        "markdown": true,
+        "go": true,
+        "ruby": true,
+        "typescript": false,
+        "python": true
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    },
+    "jupyter.jupyterServerType": "local",
+    "[sql]": {
+        "editor.defaultFormatter": "ms-mssql.mssql"
+    },
+    "gitlens.hovers.currentLine.over": "line",
+    "terminal.integrated.env.osx": {
+        "FIG_NEW_SESSION": "1"
+    },
+    "editor.accessibilitySupport": "off",
+    "git.autofetch": true,
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "liveServer.settings.donotShowInfoMsg": true,
+    "workbench.startupEditor": "none",
+    "githubPullRequests.pullBranch": "never",
+    "[yaml]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[scss]": {
+        "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
+    },
+    "files.associations": {
+        "*.html.erb": "erb",
+        "*.m": "matlab",
+    },
+    "go.toolsManagement.autoUpdate": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "matlab.mlintpath": "/Applications/MATLAB_R2022a.app/bin/maci64/mlint",
+    "matlab.matlabpath": "/Applications/MATLAB_R2022a.app/bin/matlab",
+    "python.linting.flake8Enabled": true,
+    "python.formatting.provider": "black",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    },
+    "python.linting.flake8Args": [
+        "--max-line-length",
+        "150"
+    ],
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+}
