@@ -21,3 +21,6 @@
 
 # some jsons
 .config/configstore/
+
+# wireshark
+.config/wireshark/
