@@ -1,5 +1,15 @@
-FROM sickcodes/docker-osx:ventura
+FROM ubuntu
 
-COPY . ~/.dotfiles
+RUN apt-get update && apt-get install -y \
+    make \
+    curl \
+    git \
+    zsh \
+    sudo \
+    neovim
 
-CMD [ "echo "$SHELL" ]
+COPY . /root/dotfiles
+
+RUN make -C /root/dotfiles build-linux
+
+CMD ["/bin/zsh"]
