@@ -15,6 +15,12 @@ First, Clone this repository
 % git clone https://github.com/Okabe-Junya/dotfiles.git
 ```
 
+or (if you don't need git history)
+
+```txt
+% git clone --depth 1 https://github.com/Okabe-Junya/dotfiles.git
+```
+
 Run `make`. You only need to run this command once. If you build all dotfiles, you can run `make build` command.
 
 ```txt
