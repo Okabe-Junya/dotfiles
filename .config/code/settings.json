@@ -172,7 +172,8 @@
     "python.linting.flake8Enabled": true,
     "python.formatting.provider": "black",
     "[python]": {
-        "editor.defaultFormatter": "ms-python.python"
+        "editor.defaultFormatter": "ms-python.python",
+        "editor.formatOnType": true
     },
     "python.linting.flake8Args": [
         "--max-line-length",
@@ -187,9 +188,8 @@
     "[cpp]": {
         "editor.defaultFormatter": "ms-vscode.cpptools"
     },
-    "terminal.integrated.commandsToSkipShell": [
-        "language-julia.interrupt"
-    ],
-    "julia.symbolCacheDownload": true,
-    "julia.enableTelemetry": true,
+    "git.openRepositoryInParentFolders": "never",
+    "[proto3]": {
+        "editor.defaultFormatter": "zxh404.vscode-proto3"
+    },
 }

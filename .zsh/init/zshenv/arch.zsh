@@ -7,7 +7,6 @@ if [ "$ARCH" = "arm64" ]; then
     export PATH=${BREWx86_BASE}/bin:${BREWx86_BASE}/sbin${PATH:+:${PATH}}
     export PATH=${BREW_BASE}/bin:${BREW_BASE}/sbin${PATH:+:${PATH}}
 else
-    PR_ARCH="x86"
     export BREW_BASE=/opt/brew_x86
     # export PATH=${BREW_BASE}/bin:${BREW_BASE}/sbin${PATH:+:${PATH}}
     export PATH=${PATH//¥/homebrew¥//¥/brew_x86¥/}

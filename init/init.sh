@@ -12,14 +12,27 @@ fi
 echo "Checking Xcode Command Line Tools..."
 if [ ! -d "/Library/Developer/CommandLineTools" ]; then
     echo "Installing Xcode Command Line Tools..."
-    xcode-select --install 2> /dev/null
+    xcode-select --install 2>/dev/null
 else
     sleep 1
     echo "Xcode Command Line Tools is already installed!"
 fi
 
 # Install Homebrew
-# TODO: Check if Homebrew is already installed
-# M1とx86でインストール方法が違うので，M1の場合は別の方法でインストールする
-
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" 2> /dev/null
+if [ "$(uname -m)" = "arm64" ]; then
+    if [ ! -d "/opt/homebrew" ]; then
+        echo "Installing Homebrew for Apple Silicon..."
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" 2>/dev/null
+    else
+        sleep 1
+        echo "Homebrew for Apple Silicon is already installed!"
+    fi
+else
+    if [ ! -d "/usr/local/Homebrew" ]; then
+        echo "Installing Homebrew for Intel..."
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" 2>/dev/null
+    else
+        sleep 1
+        echo "Homebrew for Intel is already installed!"
+    fi
+fi

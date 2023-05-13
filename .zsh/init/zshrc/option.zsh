@@ -1,5 +1,7 @@
+ZSH_INIT_DIR="${HOME}/.zsh/init/zshrc"
+
 # シェル上の表示の設定
-zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+zstyle ':completion:*:*:git:*' script ~/"${ZSH_INIT_DIR}"/git-completion.bash
 autoload -Uz compinit && compinit
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true

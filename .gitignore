@@ -6,6 +6,9 @@
 # Compiled Python files
 *.pyc
 
+# gcloud
+.config/gcloud/
+
 # nvim submodules
 .config/nvim/plugged
 
@@ -18,4 +21,6 @@
 
 # some jsons
 .config/configstore/
-Brewfile.lock.json
+
+# wireshark
+.config/wireshark/
