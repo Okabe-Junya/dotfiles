@@ -13,6 +13,10 @@ build: init
 	./init/pyenv.sh
 	./init/code_extensions.sh
 
+build-linux:
+	@echo "Building for Linux..."
+	./init/symlink.sh
+
 build-minimal: init
 	@echo "Building minimal for OSX..."
 	./init/brew_min.sh

@@ -125,7 +125,7 @@
         "editor.defaultFormatter": "vscode.json-language-features"
     },
     // Python
-    "python.defaultInterpreterPath": "/Users/junyaokabe/.pyenv/versions/miniforge3-4.10.3-10/envs/CP/bin/python",
+    "python.defaultInterpreterPath": "/Users/junyaokabe/.pyenv/versions/3.9.13/bin/python",
     //
     // GitHub Copilot
     "github.copilot.enable": {
@@ -169,12 +169,11 @@
     },
     "go.toolsManagement.autoUpdate": true,
     "diffEditor.ignoreTrimWhitespace": false,
-    "matlab.mlintpath": "/Applications/MATLAB_R2022a.app/bin/maci64/mlint",
-    "matlab.matlabpath": "/Applications/MATLAB_R2022a.app/bin/matlab",
     "python.linting.flake8Enabled": true,
     "python.formatting.provider": "black",
     "[python]": {
-        "editor.defaultFormatter": "ms-python.python"
+        "editor.defaultFormatter": "ms-python.python",
+        "editor.formatOnType": true
     },
     "python.linting.flake8Args": [
         "--max-line-length",
@@ -188,5 +187,9 @@
     },
     "[cpp]": {
         "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "git.openRepositoryInParentFolders": "never",
+    "[proto3]": {
+        "editor.defaultFormatter": "zxh404.vscode-proto3"
     },
 }
