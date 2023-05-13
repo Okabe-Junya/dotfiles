@@ -131,8 +131,9 @@
     "github.copilot.enable": {
         "*": true,
         "yaml": true,
-        "plaintext": false,
+        "plaintext": true,
         "markdown": true,
+        "scminput": false,
         "go": true,
         "ruby": true,
         "typescript": false,
@@ -193,5 +194,13 @@
     "git.openRepositoryInParentFolders": "never",
     "[proto3]": {
         "editor.defaultFormatter": "zxh404.vscode-proto3"
+    },
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
+    "julia.enableTelemetry": true,
+    "julia.symbolCacheDownload": true,
+    "vs-kubernetes": {
+        "vscode-kubernetes.minikube-path.mac": "/Users/junyaokabe/.vs-kubernetes/tools/minikube/darwin-arm64/minikube"
     },
 }
