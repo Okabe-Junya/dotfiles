@@ -2,6 +2,7 @@
 alias la='lsd -a'
 alias ll='lsd -l'
 alias ls='lsd'
+alias cat='bat'
 alias rm='rm -i'
 alias ..='cd ..'
 alias ...='cd ../..'
