@@ -9,6 +9,12 @@
 # gcloud
 .config/gcloud/
 
+# node_modules
+**/**/node_modules
+
+# github copilot
+.config/github-copilot/
+
 # nvim submodules
 .config/nvim/plugged
 
@@ -24,3 +30,6 @@
 
 # wireshark
 .config/wireshark/
+
+# code/settings.json
+.config/code/settings.json
