@@ -125,7 +125,7 @@
         "editor.defaultFormatter": "vscode.json-language-features"
     },
     // Python
-    "python.defaultInterpreterPath": "/Users/junyaokabe/.pyenv/versions/3.9.13/bin/python",
+    "python.defaultInterpreterPath": "/Users/junya/.pyenv/versions/3.11.3/bin/python",
     //
     // GitHub Copilot
     "github.copilot.enable": {
@@ -219,4 +219,5 @@
     "[css]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "window.zoomLevel": 1,
 }
