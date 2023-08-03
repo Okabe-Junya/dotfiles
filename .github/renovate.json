@@ -5,7 +5,7 @@
     ":timezone(Asia/Tokyo)",
     ":prHourlyLimitNone",
     ":automergePatch",
-    "dependencyDashboard"
+    ":dependencyDashboard"
   ],
   "schedule": ["after 3am and before 9am every weekday"],
 
