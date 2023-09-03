@@ -125,7 +125,7 @@
         "editor.defaultFormatter": "vscode.json-language-features"
     },
     // Python
-    "python.defaultInterpreterPath": "/Users/junyaokabe/.pyenv/versions/3.9.13/bin/python",
+    "python.defaultInterpreterPath": "/Users/junya/.pyenv/versions/3.11.3/bin/python",
     //
     // GitHub Copilot
     "github.copilot.enable": {
@@ -223,4 +223,5 @@
         "vs-kubernetes.minikube-show-information-expiration": "2023-09-11T08:55:50.599Z"
     },
     "terminal.integrated.fontFamily": "'Hack Nerd Font', monospace",
+    "window.zoomLevel": 1,
 }
