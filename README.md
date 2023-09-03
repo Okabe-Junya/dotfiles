@@ -1,7 +1,7 @@
 # dotfiles
 
 ![license](https://img.shields.io/github/license/Okabe-Junya/dotfiles)
-[![Dependency Review](https://github.com/Okabe-Junya/dotfiles/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/Okabe-Junya/dotfiles/actions/workflows/dependency-review.yml) [![Differential ShellCheck](https://github.com/Okabe-Junya/dotfiles/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/Okabe-Junya/dotfiles/actions/workflows/shellcheck.yml) [![reviewdog](https://github.com/Okabe-Junya/dotfiles/actions/workflows/reviewdog.yml/badge.svg)](https://github.com/Okabe-Junya/dotfiles/actions/workflows/reviewdog.yml) [![Test](https://github.com/Okabe-Junya/dotfiles/actions/workflows/test.yml/badge.svg)](https://github.com/Okabe-Junya/dotfiles/actions/workflows/test.yml)
+[![Dependency Review](https://github.com/Okabe-Junya/dotfiles/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/Okabe-Junya/dotfiles/actions/workflows/dependency-review.yml) [![reviewdog](https://github.com/Okabe-Junya/dotfiles/actions/workflows/reviewdog.yml/badge.svg)](https://github.com/Okabe-Junya/dotfiles/actions/workflows/reviewdog.yml) 
 
 ## abstract
 
