@@ -40,7 +40,7 @@
         "editor.lineNumbers": "on",
         "editor.occurrencesHighlight": false,
         "editor.renderLineHighlight": "none",
-        "editor.fontFamily": "YuGothic, 'Yu Gothic'",
+        "editor.fontFamily": "'Hack Nerd Font', 'Yu Gothic'",
         "editor.fontSize": 18,
         "editor.lineHeight": 32
     },
@@ -130,7 +130,7 @@
     // GitHub Copilot
     "github.copilot.enable": {
         "*": true,
-        "plaintext": false,
+        "plaintext": true,
         "markdown": true,
         "scminput": false,
         "yaml": true,
@@ -166,7 +166,7 @@
     },
     "files.associations": {
         "*.html.erb": "erb",
-        "*.m": "matlab",
+        "*.json5": "*.json"
     },
     "go.toolsManagement.autoUpdate": true,
     "diffEditor.ignoreTrimWhitespace": false,
@@ -219,5 +219,9 @@
     "[css]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "vs-kubernetes": {
+        "vs-kubernetes.minikube-show-information-expiration": "2023-09-11T08:55:50.599Z"
+    },
+    "terminal.integrated.fontFamily": "'Hack Nerd Font', monospace",
     "window.zoomLevel": 1,
 }

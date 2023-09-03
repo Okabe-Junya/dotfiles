@@ -26,3 +26,10 @@ alias gs='git status'
 # global aliases
 alias -g C='| pbcopy'
 alias -g G='| grep --color=auto'
+
+# kubectl aliases
+alias k='kubectl'
+alias kga='kubectl get all'
+alias kgp='kubectl get pods'
+alias kgs='kubectl get services'
+alias kgn='kubectl get nodes'
