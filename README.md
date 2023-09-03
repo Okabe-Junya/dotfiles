@@ -1,7 +1,7 @@
 # dotfiles
 
 ![license](https://img.shields.io/github/license/Okabe-Junya/dotfiles)
-[![Dependency Review](https://github.com/Okabe-Junya/dotfiles/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/Okabe-Junya/dotfiles/actions/workflows/dependency-review.yml) [![Differential ShellCheck](https://github.com/Okabe-Junya/dotfiles/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/Okabe-Junya/dotfiles/actions/workflows/shellcheck.yml) [![reviewdog](https://github.com/Okabe-Junya/dotfiles/actions/workflows/reviewdog.yml/badge.svg)](https://github.com/Okabe-Junya/dotfiles/actions/workflows/reviewdog.yml) [![Test](https://github.com/Okabe-Junya/dotfiles/actions/workflows/test.yml/badge.svg)](https://github.com/Okabe-Junya/dotfiles/actions/workflows/test.yml)
+[![Dependency Review](https://github.com/Okabe-Junya/dotfiles/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/Okabe-Junya/dotfiles/actions/workflows/dependency-review.yml) [![reviewdog](https://github.com/Okabe-Junya/dotfiles/actions/workflows/reviewdog.yml/badge.svg)](https://github.com/Okabe-Junya/dotfiles/actions/workflows/reviewdog.yml) 
 
 ## abstract
 
@@ -12,20 +12,20 @@ My dotfiles (e.g. `.zshrc`, `.vimrc`, etc.) for macOS.
 First, Clone this repository
 
 ```txt
-% git clone https://github.com/Okabe-Junya/dotfiles.git
+$ git clone https://github.com/Okabe-Junya/dotfiles.git
 ```
 
 or (if you don't need git history)
 
 ```txt
-% git clone --depth 1 https://github.com/Okabe-Junya/dotfiles.git
+$ git clone --depth 1 https://github.com/Okabe-Junya/dotfiles.git
 ```
 
 Run `make`. You only need to run this command once. If you build all dotfiles, you can run `make build` command.
 
 ```txt
-% cd dotfiles
-% make  # or make build
+$ cd dotfiles
+$ make
 ```
 
 After a while... it's done! You don't need some software to install manually. Only you need to do is to run `make build` command.
