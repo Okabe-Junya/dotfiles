@@ -1,14 +1,11 @@
 name: auto-assign
-
 on:
   pull_request:
-    types: [ opened, unassigned ]
-
+    types: [opened, unassigned]
 jobs:
   assign:
     runs-on: ubuntu-latest
     timeout-minutes: 1
-
     steps:
       - run: gh pr edit $NUMBER --add-assignee $ASSIGNEE
         env:

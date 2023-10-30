@@ -136,7 +136,7 @@
         "yaml": true,
         "go": true,
         "ruby": true,
-        "typescript": false,
+        "typescript": true,
         "python": true
     },
     "[markdown]": {
@@ -169,11 +169,10 @@
         "*.json5": "*.json"
     },
     "go.toolsManagement.autoUpdate": true,
-    "diffEditor.ignoreTrimWhitespace": false,
     "python.linting.flake8Enabled": true,
-    "python.formatting.provider": "black",
+    "python.formatting.provider": "none",
     "[python]": {
-        "editor.defaultFormatter": "ms-python.python",
+        "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.formatOnType": true
     },
     "python.linting.flake8Args": [
@@ -220,7 +219,8 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "vs-kubernetes": {
-        "vs-kubernetes.minikube-show-information-expiration": "2023-09-11T08:55:50.599Z"
+        "vscode-kubernetes.minikube-path.mac": "/Users/junyaokabe/.vs-kubernetes/tools/minikube/darwin-arm64/minikube",
+        "vscode-kubernetes.minikube-path-mac": "/Users/junyaokabe/.vs-kubernetes/tools/minikube/darwin-arm64/minikube"
     },
     "terminal.integrated.fontFamily": "'Hack Nerd Font', monospace",
 }

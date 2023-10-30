@@ -9,10 +9,8 @@ on:
   pull_request:
     branches:
       - main
-
 permissions:
   contents: read
-
 jobs:
   dependency-review:
     runs-on: ubuntu-latest

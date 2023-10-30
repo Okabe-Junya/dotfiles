@@ -2,7 +2,6 @@ name: WIP
 on:
   pull_request:
     types: [opened, synchronize, reopened, edited]
-
 jobs:
   wip:
     runs-on: ubuntu-latest
