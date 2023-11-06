@@ -1,43 +1,42 @@
-.PHONY : init clean build check-scripts check-scripts-all
+.DEFAULT_GOAL := setup-osx
 
-.DEFAULT_GOAL := build-minimal
-
-init:
+.PHONY: init-osx
+init-osx:
 	@echo "Initializing..."
 	./init/symlink.sh
 	./init/init.sh
 
-build: init
-	@echo "Building for OSX..."
+.PHONY: setup-osx
+setup-osx: init-osx
+	@echo "Setup for OSX..."
 	./init/brew.sh
-	./init/pyenv.sh
-	./init/code_extensions.sh
 
-build-linux:
-	@echo "Building for Linux..."
+.PHONY: setup-linux
+setup-linux:
+	@echo "Setup for Linux..."
 	./init/symlink.sh
 
-build-minimal: init
-	@echo "Building minimal for OSX..."
+.PHONY: setup-osx-minimal
+setup-osx-minimal:
+	@echo "Setup for OSX Minimal..."
 	./init/brew_min.sh
 	./init/pyenv.sh
-	./init/code_extensions.sh
 
-check-scripts:
+.PHONY: lint
+lint:
 	shellcheck -e SC2148 **/*.sh
 	flake8 **/*.py
 
+.PHONY: format
 format: lint
 	shfmt -w -i 4 **/*.sh
 	black **/*.py
 
+.PHONY: clean
 clean:
 	@echo "Cleaning..."
 
-clean_up:
+.PHONY: clean-up-brew
+clean-up-brew:
 	@echo "Brew Cleaning up..."
 	brew bundle cleanup --force --file Brewfile
-
-clean_up_min:
-	@echo "Brew Cleaning up..."
-	brew bundle cleanup --force --file ~/dotfiles/init/min/Brewfile
