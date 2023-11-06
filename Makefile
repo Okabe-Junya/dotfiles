@@ -40,3 +40,20 @@ clean:
 clean-up-brew:
 	@echo "Brew Cleaning up..."
 	brew bundle cleanup --force --file Brewfile
+
+.PHONY: help
+help:
+	@echo "Usage: make [target]"
+	@echo ""
+	@echo "Targets:"
+	@echo "  init-osx            Initialize for OSX"
+	@echo "  setup-osx           Setup for OSX"
+	@echo "  setup-linux         Setup for Linux"
+	@echo "  setup-osx-minimal   Setup for OSX Minimal"
+	@echo "  lint                Lint shell scripts, python scripts"
+	@echo "  format              Format shell scripts, python scripts"
+	@echo "  clean               Clean up"
+	@echo "  clean-up-brew       Clean up brew"
+	@echo "  help                Show this help message"
+	@echo ""
+	@exit 0
