@@ -33,3 +33,6 @@
 
 # code/settings.json
 .config/code/settings.json
+
+# vender
+vendor/
