@@ -2,6 +2,11 @@
 truncation_length = 10
 truncate_to_repo = false
 
+[battery]
+full_symbol = '🔋 '
+charging_symbol = '⚡️ '
+discharging_symbol = '💀 '
+
 [[battery.display]]
 threshold = 100
 style = "bold blue"
