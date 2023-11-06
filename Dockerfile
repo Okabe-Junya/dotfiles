@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:22.04
 
 RUN apt-get update && apt-get install -y \
     make \
@@ -6,10 +6,11 @@ RUN apt-get update && apt-get install -y \
     git \
     zsh \
     sudo \
-    neovim
+    neovim \
+    && rm -rf /var/lib/apt/lists/*
 
 COPY . /root/dotfiles
 
-RUN make -C /root/dotfiles build-linux
+RUN make -C /root/dotfiles setup-linux
 
 CMD ["/bin/zsh"]
