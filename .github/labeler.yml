@@ -1,0 +1,21 @@
+area/github-management:
+  - changed-files:
+      - any-glob-to-any-file:
+          - ".github/**"
+
+area/config:
+  - changed-files:
+      - any-glob-to-any-file:
+          - ".config/**"
+
+area/zsh:
+  - changed-files:
+      - any-glob-to-any-file:
+          - ".zsh/**"
+          - ".zshrc"
+
+area/documentation:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "docs/*.md"
+          - "docs/*.txt"
