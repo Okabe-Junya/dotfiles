@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # unix command aliases
 alias la='lsd -a'
 alias ll='lsd -l'
