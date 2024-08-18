@@ -1,7 +1,6 @@
 #!/usr/bin/env zsh
 
-ZSH_CONFIG_DIR="~/dotfiles/.zsh/zshrc"
-ls -l "${ZSH_CONFIG_DIR}"
+ZSH_CONFIG_DIR="${HOME}/dotfiles/.zsh/zshrc"
 
 # Load source files
 source "${ZSH_CONFIG_DIR}/alias.zsh"
