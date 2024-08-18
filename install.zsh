@@ -1,5 +1,14 @@
 #!/usr/bin/env zsh
 
+NON_INTERACTIVE=false
+
+for arg in "$@"; do
+    if [ "$arg" = "--non-interactive" ]; then
+        NON_INTERACTIVE=true
+        break
+    fi
+done
+
 function check_os() {
     if [ "$(uname)" != "Darwin" ]; then
         echo "This script is only for Mac OS X"
@@ -45,16 +54,21 @@ function initialize_symbolic_links() {
 
 function brew_bundle_install() {
     echo "Installing Homebrew Bundle..."
-    echo -n "Do you want to install Homebrew Bundle? [y/n]: "
-    read answer
-    case $answer in
-    [yY]*)
+    if [ "$NON_INTERACTIVE" = true ]; then
+        echo "Skipping interactive prompt and installing Homebrew Bundle..."
         brew bundle install --file="${HOME}/dotfiles/install/Brewfile"
-        ;;
-    *)
-        echo "Homebrew Bundle is not installed!"
-        ;;
-    esac
+    else
+        echo -n "Do you want to install Homebrew Bundle? [y/n]: "
+        read answer
+        case $answer in
+        [yY]*)
+            brew bundle install --file="${HOME}/dotfiles/install/Brewfile"
+            ;;
+        *)
+            echo "Homebrew Bundle is not installed!"
+            ;;
+        esac
+    fi
 }
 
 function install() {
