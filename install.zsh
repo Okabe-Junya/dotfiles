@@ -51,20 +51,20 @@ function install_homebrew() {
 
 function initialize_symbolic_links() {
     echo "Initializing symbolic links..."
-    source "${HOME}/dotfiles/install/symlink.zsh"
+    source "./install/symlink.zsh"
 }
 
 function brew_bundle_install() {
     echo "Installing Homebrew Bundle..."
     if [ "$NON_INTERACTIVE" = true ]; then
         echo "Skipping interactive prompt and installing Homebrew Bundle..."
-        brew bundle install --file="${HOME}/dotfiles/install/Brewfile"
+        brew bundle install --file="./install/Brewfile"
     else
         echo -n "Do you want to install Homebrew Bundle? [y/n]: "
         read answer
         case $answer in
         [yY]*)
-            brew bundle install --file="${HOME}/dotfiles/install/Brewfile"
+            brew bundle install --file="./install/Brewfile"
             ;;
         *)
             echo "Homebrew Bundle is not installed!"
