@@ -1,35 +1,55 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base",
-    ":timezone(Asia/Tokyo)",
+    "config:best-practices",
     ":prHourlyLimitNone",
     ":automergePatch",
-    ":dependencyDashboard"
+    ":automergeMinor",
+    ":preserveSemverRanges"
   ],
-  "schedule": ["after 3am and before 9am every weekday"],
-
-  "labels": ["dependencies", "renovate"],
-
+  "schedule": [
+    "after 3am on monday",
+    "before 6am on monday"
+  ],
   "packageRules": [
     {
-      "matchUpdateTypes": ["pin"],
-      "addLabels": ["pin"]
+      "matchUpdateTypes": [
+        "pin"
+      ],
+      "addLabels": [
+        "renovate/pin"
+      ]
     },
     {
-      "matchUpdateTypes": ["major"],
-      "addLabels": ["major"]
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "addLabels": [
+        "renovate/major"
+      ]
     },
     {
-      "matchUpdateTypes": ["minor"],
-      "addLabels": ["minor"]
+      "matchUpdateTypes": [
+        "minor"
+      ],
+      "minimumReleaseAge": "5 days",
+      "addLabels": [
+        "renovate/minor"
+      ]
     },
     {
-      "matchUpdateTypes": ["patch"],
-      "addLabels": ["patch"],
-      "automerge": true
+      "matchUpdateTypes": [
+        "patch"
+      ],
+      "minimumReleaseAge": "3 days",
+      "addLabels": [
+        "renovate/patch"
+      ]
+    },
+    {
+      "matchDepTypes": [
+        "action"
+      ],
+      "pinDigests": false
     }
-  ],
-  "dependencyDashboard": false,
-  "branchConcurrentLimit": 0
+  ]
 }
