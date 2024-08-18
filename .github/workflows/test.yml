@@ -18,4 +18,5 @@ jobs:
 
       - name: Run tests
         run: ./install.zsh --non-interactive
+        shell: zsh {0}
         timeout-minutes: 60

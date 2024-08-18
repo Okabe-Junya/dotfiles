@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+set -euo pipefail
+
 NON_INTERACTIVE=false
 
 for arg in "$@"; do
