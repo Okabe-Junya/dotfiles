@@ -1,4 +1,3 @@
-# brew のパスの設定
 ARCH=$(uname -m)
 if [ "$ARCH" = "arm64" ]; then
     PR_ARCH="ARM"
