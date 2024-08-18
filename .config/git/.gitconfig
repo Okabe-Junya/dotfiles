@@ -9,8 +9,7 @@
 [init]
 	defaultBranch = main
 [core]
-	excludesfile = ~/.gitignore_global
-	editor = nvim
+	editor = vim
 [gitflow "branch"]
 	master = main
 [push]
