@@ -1,4 +1,5 @@
-# brew のパスの設定
+#!/usr/bin/env zsh
+
 ARCH=$(uname -m)
 if [ "$ARCH" = "arm64" ]; then
     PR_ARCH="ARM"

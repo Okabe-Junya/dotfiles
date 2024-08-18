@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # unix command aliases
 alias la='lsd -a'
 alias ll='lsd -l'
@@ -6,10 +8,9 @@ alias ls='lsd'
 alias rm='rm -i'
 alias ..='cd ..'
 alias ...='cd ../..'
+alias ....='cd ../../..'
 alias tree='tree -C --gitignore'
 alias treep='tree -C -p --gitignore'
-alias q='exit'
-alias :wq='exit'
 alias pwdc='pwd | tr -d "\n" | pbcopy'
 
 # glow (Markdown viewer)
