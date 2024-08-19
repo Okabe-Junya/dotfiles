@@ -49,6 +49,16 @@ function install_homebrew() {
     fi
 }
 
+function install_oh_my_zsh() {
+    if [ ! -d "$HOME/.oh-my-zsh" ]; then
+        echo "Installing Oh My Zsh..."
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    else
+        sleep 1
+        echo "Oh My Zsh is already installed!"
+    fi
+}
+
 function initialize_symbolic_links() {
     echo "Initializing symbolic links..."
     source "./install/symlink.zsh"
@@ -77,6 +87,7 @@ function install() {
     check_os
     install_command_line_tools
     install_homebrew
+    install_oh_my_zsh
     brew_bundle_install
 
     echo "Installation is complete!"
