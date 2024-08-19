@@ -2,10 +2,10 @@
 
 ![License](https://img.shields.io/github/license/Okabe-Junya/dotfiles) [![Test](https://github.com/Okabe-Junya/dotfiles/actions/workflows/test.yml/badge.svg)](https://github.com/Okabe-Junya/dotfiles/actions/workflows/test.yml)
 
-## Usage
+## Installation
 
 ```sh
-$ curl -L https://raw.githubusercontent.com/Okabe-Junya/dotfiles/main/install.sh | zsh
+$ curl -L https://raw.githubusercontent.com/Okabe-Junya/dotfiles/main/install.zsh | zsh -s -- --non-interactive
 ```
 
 ## License
