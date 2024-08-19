@@ -1,38 +1,6 @@
-.DS_Store
-
-# direnv
-.envrc
-
-# Compiled Python files
-*.pyc
-
-# gcloud
-.config/gcloud/
-
-# node_modules
-**/**/node_modules
-
-# github copilot
-.config/github-copilot/
-
-# nvim submodules
-.config/nvim/plugged
-
-# nvim node_modules
-.config/coc/extensions/*
-!.config/coc/extensions/package.json
-
-# iterm2 config
-.config/iterm2/AppSupport
-
-# some jsons
-.config/configstore/
-
-# wireshark
-.config/wireshark/
-
-# code/settings.json
-.config/code/settings.json
-
-# vender
 vendor/
+
+.config/
+!.config/gh/
+!.config/git/
+!.config/latex/
