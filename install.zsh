@@ -77,6 +77,8 @@ function initialize_symbolic_links() {
 
 function brew_bundle_install() {
     echo "Installing Homebrew Bundle..."
+    current_dir=$(pwd)
+
     if [ "$NON_INTERACTIVE" = true ]; then
         echo "Skipping interactive prompt and installing Homebrew Bundle..."
         brew bundle install --file="./install/Brewfile"
@@ -92,6 +94,7 @@ function brew_bundle_install() {
             ;;
         esac
     fi
+    cd "$current_dir"
 }
 
 function install() {
