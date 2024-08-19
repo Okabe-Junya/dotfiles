@@ -1,11 +1,10 @@
-# Initialize
-ZSH_INIT_DIR="${HOME}/.zsh/init/zshrc"
+#!/usr/bin/env zsh
 
-if [ -d $ZSH_INIT_DIR ] && [ -r $ZSH_INIT_DIR ] && [ -x $ZSH_INIT_DIR ]; then
-  for file in ${ZSH_INIT_DIR}/*.zsh; do
-    [ -r $file ] && source $file
-  done
-  # source ${ZSH_INIT_DIR}/post/post.zsh
-fi
+ZSH_CONFIG_DIR="${HOME}/dotfiles/.zsh/zshrc"
 
-source "${ZSH_INIT_DIR}/alias.zsh"
+# Load source files
+source "${ZSH_CONFIG_DIR}/arch.zsh"
+source "${ZSH_CONFIG_DIR}/export.zsh"
+source "${ZSH_CONFIG_DIR}/virtualenv.zsh"
+source "${ZSH_CONFIG_DIR}/omz.zsh"
+source "${ZSH_CONFIG_DIR}/alias.zsh"

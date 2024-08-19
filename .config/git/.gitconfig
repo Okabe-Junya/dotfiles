@@ -1,0 +1,31 @@
+[user]
+	name = Junya Okabe
+	email = okabe.junya.qj@alumni.tsukuba.ac.jp
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[init]
+	defaultBranch = main
+[core]
+	editor = vim
+[gitflow "branch"]
+	master = main
+[push]
+	autoSetupRemote = true
+[ghq]
+	root = ~/src
+[diff]
+        tool = difftastic
+
+[difftool]
+        prompt = false
+
+[difftool "difftastic"]
+        cmd = difft "$LOCAL" "$REMOTE"
+
+[pager]
+        difftool = true
+[http]
+	cookiefile = abc
