@@ -78,6 +78,7 @@ function initialize_symbolic_links() {
 function brew_bundle_install() {
     echo "Installing Homebrew Bundle..."
     current_dir=$(pwd)
+    cd "$HOME/dotfiles"
 
     if [ "$NON_INTERACTIVE" = true ]; then
         echo "Skipping interactive prompt and installing Homebrew Bundle..."
