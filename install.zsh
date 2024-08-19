@@ -29,6 +29,17 @@ function check_os() {
     fi
 }
 
+function clone_repository() {
+    GITHUB_REPOSITORY="https://github.com/Okabe-Junya/dotfiles"
+    if [ ! -d "$HOME/dotfiles" ]; then
+        echo "Cloning dotfiles repository..."
+        git clone "$GITHUB_REPOSITORY" "$HOME/dotfiles"
+    else
+        sleep 1
+        echo "dotfiles repository is already cloned!"
+    fi
+}
+
 function install_command_line_tools() {
     if [ ! -d "/Library/Developer/CommandLineTools" ]; then
         echo "Installing Xcode Command Line Tools..."
@@ -85,6 +96,7 @@ function brew_bundle_install() {
 
 function install() {
     check_os
+    clone_repository
     install_command_line_tools
     install_homebrew
     install_oh_my_zsh
