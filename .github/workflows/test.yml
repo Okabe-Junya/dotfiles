@@ -20,3 +20,15 @@ jobs:
         run: ./install.zsh --non-interactive
         shell: zsh {0}
         timeout-minutes: 60
+
+  readme-installation-test:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Run tests
+        run: curl -L https://raw.githubusercontent.com/Okabe-Junya/dotfiles/main/install.zsh | zsh -s -- --non-interactive
+        shell: zsh {0}
+        timeout-minutes: 60
