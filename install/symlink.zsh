@@ -2,6 +2,7 @@
 
 # config
 ln -nfs "${HOME}/dotfiles/.config/git" "${HOME}/.config/git"
+ln -nfs "${HOME}/dotfiles/.config/git/.gitconfig" "${HOME}/.gitconfig"
 ln -nfs "${HOME}/dotfiles/.config/gh" "${HOME}/.config/gh"
 
 # zshrc
