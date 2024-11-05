@@ -29,6 +29,6 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run tests
-        run: curl -L https://raw.githubusercontent.com/Okabe-Junya/dotfiles/main/install.zsh | zsh -s -- --non-interactive
+        run: curl -L https://raw.githubusercontent.com/Okabe-Junya/dotfiles/branch-name/install.zsh | zsh -s -- --non-interactive
         shell: zsh {0}
         timeout-minutes: 60

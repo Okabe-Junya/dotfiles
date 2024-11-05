@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-curl -L https://raw.githubusercontent.com/Okabe-Junya/dotfiles/main/install.zsh | zsh -s -- --non-interactive
+curl -L https://raw.githubusercontent.com/Okabe-Junya/dotfiles/branch-name/install.zsh | zsh -s -- --non-interactive
 ```
 
 ## License
