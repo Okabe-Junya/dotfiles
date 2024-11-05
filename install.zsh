@@ -105,6 +105,7 @@ function install() {
     install_homebrew
     install_oh_my_zsh
     brew_bundle_install
+    initialize_symbolic_links
 
     echo "Installation is complete!"
 }
