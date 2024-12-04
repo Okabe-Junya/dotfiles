@@ -1,6 +1,7 @@
 [user]
 	name = Junya Okabe
 	email = okabe.junya.qj@alumni.tsukuba.ac.jp
+	signingkey = 9F9BF309B112E65E
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -29,3 +30,5 @@
         difftool = true
 [http]
 	cookiefile = abc
+[commit]
+	gpgsign = true
