@@ -16,3 +16,6 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 # go
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
+
+# launcher
+export PATH="$HOME/.rd/bin:$PATH"
