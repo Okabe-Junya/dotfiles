@@ -37,3 +37,6 @@ alias kgs='kubectl get services'
 alias kgn='kubectl get nodes'
 alias kx='kubectx'
 alias kn='kubens'
+
+# other aliases
+alias codei='code-insiders'
