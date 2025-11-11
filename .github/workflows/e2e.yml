@@ -1,0 +1,150 @@
+name: E2E Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  schedule:
+    # Run every 1st day of the Month at 00:00 UTC (09:00 JST)
+    - cron: '0 0 1 * *'
+  workflow_dispatch:
+
+jobs:
+  # Quick smoke test - install without brew bundle (PR only)
+  smoke-test:
+    runs-on: macos-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v5.0.0
+
+      - name: Setup Homebrew environment
+        run: |
+          if [ ! -d "/opt/homebrew" ]; then
+            NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+          fi
+          eval "$(/opt/homebrew/bin/brew shellenv)"
+
+      - name: Test individual functions
+        run: |
+          source install.zsh
+
+          # Test OS check
+          check_os
+
+          # Test Homebrew setup
+          setup_homebrew_env
+          command -v brew || { echo "✗ brew not found"; exit 1; }
+
+          echo "✓ Basic function tests passed"
+        shell: zsh {0}
+
+      - name: Test symlink creation (isolated)
+        run: |
+          # Create a temporary HOME for testing
+          export TEST_HOME=$(mktemp -d)
+          export HOME=$TEST_HOME
+
+          # Copy dotfiles to test location
+          cp -r $GITHUB_WORKSPACE $TEST_HOME/dotfiles
+
+          # Run symlink script
+          cd $TEST_HOME/dotfiles
+          zsh install/symlink.zsh
+
+          # Verify symlinks
+          test -L $TEST_HOME/.zshrc || { echo "✗ Missing .zshrc symlink"; exit 1; }
+          test -L $TEST_HOME/.gitconfig || { echo "✗ Missing .gitconfig symlink"; exit 1; }
+          test -L $TEST_HOME/.config/git || { echo "✗ Missing .config/git symlink"; exit 1; }
+
+          # Verify symlink targets
+          test -f $(readlink $TEST_HOME/.zshrc) || { echo "✗ .zshrc target invalid"; exit 1; }
+
+          echo "✓ Symlink test passed"
+        shell: zsh {0}
+
+  # Full installation test (main branch, scheduled, manual)
+  full-installation:
+    runs-on: macos-latest
+    if: github.event_name == 'push' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v5.0.0
+
+      - name: Run full installation
+        run: ./install.zsh --non-interactive
+        shell: zsh {0}
+        timeout-minutes: 60
+
+      - name: Verify Homebrew installation
+        run: |
+          command -v brew || { echo "✗ brew not found"; exit 1; }
+          brew --version
+          echo "✓ Homebrew installed"
+        shell: zsh {0}
+
+      - name: Verify Oh My Zsh installation
+        run: |
+          test -d $HOME/.oh-my-zsh || { echo "✗ Oh My Zsh not installed"; exit 1; }
+          test -f $HOME/.oh-my-zsh/oh-my-zsh.sh || { echo "✗ Oh My Zsh incomplete"; exit 1; }
+          echo "✓ Oh My Zsh installed"
+        shell: zsh {0}
+
+      - name: Verify symlinks
+        run: |
+          test -L $HOME/.zshrc || { echo "✗ Missing .zshrc symlink"; exit 1; }
+          test -L $HOME/.gitconfig || { echo "✗ Missing .gitconfig symlink"; exit 1; }
+          test -L $HOME/.config/git || { echo "✗ Missing .config/git symlink"; exit 1; }
+          echo "✓ All symlinks created"
+        shell: zsh {0}
+
+      - name: Verify key packages
+        run: |
+          command -v git || { echo "✗ git not found"; exit 1; }
+          command -v fzf || { echo "✗ fzf not found"; exit 1; }
+          command -v rg || { echo "✗ ripgrep not found"; exit 1; }
+          command -v bat || { echo "✗ bat not found"; exit 1; }
+          echo "✓ Key packages installed"
+        shell: zsh {0}
+
+      - name: Test .zshrc sourcing
+        run: |
+          source $HOME/.zshrc
+          echo "✓ Successfully sourced .zshrc"
+        shell: zsh {0}
+
+      - name: Verify environment configuration
+        run: |
+          # Check if Homebrew is in PATH
+          echo $PATH | grep -q "/opt/homebrew/bin" || { echo "✗ Homebrew not in PATH"; exit 1; }
+          echo "✓ Environment configured correctly"
+        shell: zsh {0}
+
+  # Test README installation method (main branch only)
+  readme-installation:
+    runs-on: macos-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+      - name: Run README one-line installation
+        run: curl -L https://raw.githubusercontent.com/Okabe-Junya/dotfiles/main/install.zsh | zsh -s -- --non-interactive
+        shell: zsh {0}
+        timeout-minutes: 60
+
+      - name: Verify installation
+        run: |
+          command -v brew || { echo "✗ brew not found"; exit 1; }
+          test -d $HOME/.oh-my-zsh || { echo "✗ Oh My Zsh not installed"; exit 1; }
+          test -L $HOME/.zshrc || { echo "✗ Missing .zshrc symlink"; exit 1; }
+          test -d $HOME/dotfiles || { echo "✗ dotfiles directory not created"; exit 1; }
+          echo "✓ README installation test passed"
+        shell: zsh {0}
+
+      - name: Test basic functionality
+        run: |
+          source $HOME/.zshrc
+          command -v git && command -v fzf
+          echo "✓ Basic functionality verified"
+        shell: zsh {0}
