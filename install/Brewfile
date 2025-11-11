@@ -1,18 +1,18 @@
-# Homebrew taps
-tap "homebrew/bundle"
-tap "homebrew/services"
-
 # Core utilities and tools
 brew "coreutils"
 brew "curl"
 brew "direnv"
 brew "gettext"
+brew "gpg"
+brew "pinentry-mac"
+brew "htop"
 brew "tmux"
 brew "tree"
+brew "glib"
+brew "xz"
 
 # Modern Unix Tools
 brew "bat"
-brew "duf"
 brew "fzf"
 brew "git-delta"
 brew "glances"
@@ -20,11 +20,13 @@ brew "httpie"
 brew "jq"
 brew "lsd"
 brew "ripgrep"
+brew "yq"
 
 # Development tools and compilers
 brew "cmake"
 brew "gcc"
 brew "llvm"
+brew "protobuf"
 
 # Programming languages and version managers
 brew "go"
@@ -45,8 +47,7 @@ brew "helmfile"
 brew "kind"
 brew "kubectl"
 brew "kustomize"
-brew "minikube"
-brew "prometheus"
+brew "kubectx"
 
 # Cloud tools
 brew "awscli"
@@ -59,6 +60,8 @@ brew "openssl@3"
 # Git and related tools
 brew "gh"
 brew "git"
+brew "git-lfs"
+brew "ghq"
 
 # Multimedia tools
 brew "ffmpeg"
@@ -66,12 +69,8 @@ brew "ffmpeg"
 # Terminal enhancements
 brew "neovim"
 
-# Miscellaneous utilities
-brew "glib"
-brew "xz"
-brew "yarn"
-
 # Fonts and GUI applications
+cask "claude-code"
 cask "font-hack-nerd-font"
 cask "google-chrome"
 cask "google-cloud-sdk"
