@@ -14,7 +14,7 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Run tests
         run: ./install.zsh --non-interactive
@@ -26,7 +26,7 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Run tests
         run: curl -L https://raw.githubusercontent.com/Okabe-Junya/dotfiles/main/install.zsh | zsh -s -- --non-interactive
