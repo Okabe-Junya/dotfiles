@@ -2,3 +2,5 @@
 .ipynb_checkpoints
 .envrc
 .junya-okabe
+
+**/.claude/settings.local.json
