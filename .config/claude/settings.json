@@ -281,11 +281,10 @@
       "Bash(mkfs:*)",
       "Bash(dd if=/dev/zero:*)",
       "Bash(dd if=/dev/random:*)",
-      "Bash(:(){ :|:& };::*)",
-      "Bash(curl * | sh:*)",
-      "Bash(wget * | sh:*)",
-      "Bash(eval $(curl:*)",
-      "Bash(eval $(wget:*)"
+      "Bash(curl:* | sh:*)",
+      "Bash(wget:* | sh:*)",
+      "Bash(curl:* | bash:*)",
+      "Bash(wget:* | bash:*)"
     ],
     "additionalDirectories": [],
     "defaultMode": "acceptEdits",
