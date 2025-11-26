@@ -9,7 +9,7 @@ ln -nfs "${HOME}/dotfiles/.config/git/.gitconfig" "${HOME}/.gitconfig"
 ln -nfs "${HOME}/dotfiles/.config/gh" "${HOME}/.config/gh"
 
 # claude
-ln -nfs "${HOME}/dotfiles/.config/claude" "${HOME}/.claude"
+ln -nfs "${HOME}/dotfiles/.config/claude/settings.json" "${HOME}/.claude/settings.json"
 
 # zshrc
 if [ -f "${HOME}/.zshrc" ]; then
