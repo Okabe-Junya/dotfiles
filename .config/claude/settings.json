@@ -1,5 +1,13 @@
 {
-  "model": "claude-sonnet-4-5-20250929",
+  "cleanupPeriodDays": 30,
+  "env": {
+    "BASH_DEFAULT_TIMEOUT_MS": "60000",
+    "BASH_MAX_TIMEOUT_MS": "300000",
+    "BASH_MAX_OUTPUT_LENGTH": "500000",
+    "CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR": "true",
+    "DISABLE_COST_WARNINGS": "0",
+    "DISABLE_TELEMETRY": "0"
+  },
   "permissions": {
     "allow": [
       "Bash(kubectl get:*)",
@@ -157,6 +165,51 @@
       "WebFetch",
       "WebSearch"
     ],
+    "deny": [
+      "Read(.env)",
+      "Read(.env.*)",
+      "Read(.envrc)",
+      "Read(./secrets/**)",
+      "Read(./**/secrets/**)",
+      "Read(~/.*credentials*)",
+      "Read(~/.ssh/id_*)",
+      "Read(~/.ssh/*_rsa)",
+      "Read(~/.ssh/*_ed25519)",
+      "Read(~/.ssh/*_ecdsa)",
+      "Read(~/.ssh/config)",
+      "Read(~/.aws/credentials)",
+      "Read(~/.aws/config)",
+      "Read(~/.config/gcloud/application_default_credentials.json)",
+      "Read(~/.config/gcloud/credentials.db)",
+      "Read(~/.config/gcloud/legacy_credentials/**)",
+      "Read(~/.kube/config)",
+      "Read(~/.docker/config.json)",
+      "Read(terraform.tfstate)",
+      "Read(terraform.tfstate.backup)",
+      "Read(./**/terraform.tfstate)",
+      "Read(./**/terraform.tfstate.backup)",
+      "Read(**/*.key)",
+      "Read(**/*.pem)",
+      "Read(**/*.p12)",
+      "Read(**/*.pfx)",
+      "Read(**/*-key.json)",
+      "Read(**/service-account*.json)",
+      "Read(**/*vault*.yml)",
+      "Read(.netrc)",
+      "Read(.npmrc)",
+      "Read(/etc/shadow)",
+      "Read(/etc/sudoers)",
+      "Bash(rm -rf /:*)",
+      "Bash(rm -rf ~:*)",
+      "Bash(rm -rf /*:*)",
+      "Bash(mkfs:*)",
+      "Bash(dd if=/dev/zero:*)",
+      "Bash(dd if=/dev/random:*)",
+      "Bash(curl:* | sh:*)",
+      "Bash(wget:* | sh:*)",
+      "Bash(curl:* | bash:*)",
+      "Bash(wget:* | bash:*)"
+    ],
     "ask": [
       "Bash(kubectl apply:*)",
       "Bash(kubectl create:*)",
@@ -241,91 +294,18 @@
       "Bash(pip install:*)",
       "Bash(pip uninstall:*)"
     ],
-    "deny": [
-      "Read(.env)",
-      "Read(.env.*)",
-      "Read(.envrc)",
-      "Read(./secrets/**)",
-      "Read(./**/secrets/**)",
-      "Read(~/.*credentials*)",
-      "Read(~/.ssh/id_*)",
-      "Read(~/.ssh/*_rsa)",
-      "Read(~/.ssh/*_ed25519)",
-      "Read(~/.ssh/*_ecdsa)",
-      "Read(~/.ssh/config)",
-      "Read(~/.aws/credentials)",
-      "Read(~/.aws/config)",
-      "Read(~/.config/gcloud/application_default_credentials.json)",
-      "Read(~/.config/gcloud/credentials.db)",
-      "Read(~/.config/gcloud/legacy_credentials/**)",
-      "Read(~/.kube/config)",
-      "Read(~/.docker/config.json)",
-      "Read(terraform.tfstate)",
-      "Read(terraform.tfstate.backup)",
-      "Read(./**/terraform.tfstate)",
-      "Read(./**/terraform.tfstate.backup)",
-      "Read(**/*.key)",
-      "Read(**/*.pem)",
-      "Read(**/*.p12)",
-      "Read(**/*.pfx)",
-      "Read(**/*-key.json)",
-      "Read(**/service-account*.json)",
-      "Read(**/*vault*.yml)",
-      "Read(.netrc)",
-      "Read(.npmrc)",
-      "Read(/etc/shadow)",
-      "Read(/etc/sudoers)",
-      "Bash(rm -rf /:*)",
-      "Bash(rm -rf ~:*)",
-      "Bash(rm -rf /*:*)",
-      "Bash(mkfs:*)",
-      "Bash(dd if=/dev/zero:*)",
-      "Bash(dd if=/dev/random:*)",
-      "Bash(curl:* | sh:*)",
-      "Bash(wget:* | sh:*)",
-      "Bash(curl:* | bash:*)",
-      "Bash(wget:* | bash:*)"
-    ],
-    "additionalDirectories": [],
     "defaultMode": "acceptEdits",
-    "disableBypassPermissionsMode": "disable"
+    "disableBypassPermissionsMode": "disable",
+    "additionalDirectories": []
   },
-  "sandbox": {
-    "enabled": true,
-    "autoAllowBashIfSandboxed": true,
-    "excludedCommands": [
-      "kubectl",
-      "gcloud",
-      "docker",
-      "helm",
-      "terraform",
-      "git",
-      "gh",
-      "go"
-    ],
-    "allowUnsandboxedCommands": true,
-    "network": {
-      "allowLocalBinding": true,
-      "allowUnixSockets": [
-        "~/.docker/run/docker.sock",
-        "~/.ssh/agent-socket"
-      ]
-    }
-  },
-  "env": {
-    "BASH_DEFAULT_TIMEOUT_MS": "60000",
-    "BASH_MAX_TIMEOUT_MS": "300000",
-    "BASH_MAX_OUTPUT_LENGTH": "500000",
-    "CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR": "true",
-    "DISABLE_COST_WARNINGS": "0",
-    "DISABLE_TELEMETRY": "0"
-  },
-  "cleanupPeriodDays": 30,
+  "enableAllProjectMcpServers": true,
   "statusLine": {
     "type": "command",
     "command": "~/.config/claude/statusline.sh"
   },
+  "forceLoginMethod": "claudeai",
   "outputStyle": "Explanatory",
-  "enableAllProjectMcpServers": true,
-  "forceLoginMethod": "claudeai"
+  "sandbox": {
+    "enabled": false
+  }
 }
