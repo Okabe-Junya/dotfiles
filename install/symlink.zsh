@@ -8,12 +8,17 @@ ln -nfs "${HOME}/dotfiles/.config/git" "${HOME}/.config/git"
 ln -nfs "${HOME}/dotfiles/.config/git/.gitconfig" "${HOME}/.gitconfig"
 ln -nfs "${HOME}/dotfiles/.config/gh" "${HOME}/.config/gh"
 
-# claude
-if [ ! -d "${HOME}/.config/claude" ]; then
-    mkdir -p "${HOME}/.config/claude"
+# claude code (~/.claude/)
+# Claude Code uses ~/.claude/ as its config directory
+if [ ! -d "${HOME}/.claude" ]; then
+    mkdir -p "${HOME}/.claude"
 fi
-ln -nfs "${HOME}/dotfiles/.config/claude/settings.json" "${HOME}/.config/claude/settings.json"
-ln -nfs "${HOME}/dotfiles/.config/claude/statusline.sh" "${HOME}/.config/claude/statusline.sh"
+# settings.json - global settings
+ln -nfs "${HOME}/dotfiles/.config/claude/settings.json" "${HOME}/.claude/settings.json"
+# CLAUDE.md - global instructions (memory file)
+ln -nfs "${HOME}/dotfiles/.config/claude/CLAUDE.md" "${HOME}/.claude/CLAUDE.md"
+# agents/ - sub-agents for specialized tasks
+ln -nfs "${HOME}/dotfiles/.config/claude/agents" "${HOME}/.claude/agents"
 
 # zshrc
 if [ -f "${HOME}/.zshrc" ]; then
