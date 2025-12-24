@@ -5,3 +5,7 @@ vendor/
 !.config/git/
 !.config/latex/
 !.config/claude/
+
+# Override global gitignore to track CLAUDE.md in this repo
+!CLAUDE.md
+!.config/claude/CLAUDE.md
