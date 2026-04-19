@@ -27,4 +27,9 @@ plugins=(
     ssh
 )
 
+# Add Homebrew completions to FPATH before loading Oh My Zsh
+if type brew &>/dev/null; then
+    FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+fi
+
 source $ZSH/oh-my-zsh.sh
