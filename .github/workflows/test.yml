@@ -28,7 +28,13 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Run tests
-        run: curl -L https://raw.githubusercontent.com/Okabe-Junya/dotfiles/main/install.zsh | zsh -s -- --non-interactive
+      - name: Serve install.zsh locally
+        run: |
+          python3 -m http.server 8888 &
+          sleep 1
+        shell: zsh {0}
+
+      - name: Run remote-style installation
+        run: curl -L http://localhost:8888/install.zsh | zsh -s -- --non-interactive
         shell: zsh {0}
         timeout-minutes: 60
