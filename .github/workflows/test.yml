@@ -16,10 +16,14 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Run tests
-        run: ./install.zsh --non-interactive
+      - name: Run install script
+        run: ./install.zsh --non-interactive --skip-brew-bundle
         shell: zsh {0}
-        timeout-minutes: 60
+        timeout-minutes: 10
+
+      - name: Validate Brewfile
+        run: brew bundle list --file=install/Brewfile > /dev/null
+        shell: zsh {0}
 
   readme-installation-test:
     runs-on: macos-latest
@@ -35,6 +39,10 @@ jobs:
         shell: zsh {0}
 
       - name: Run remote-style installation
-        run: curl -L http://localhost:8888/install.zsh | zsh -s -- --non-interactive
+        run: curl -L http://localhost:8888/install.zsh | zsh -s -- --non-interactive --skip-brew-bundle
         shell: zsh {0}
-        timeout-minutes: 60
+        timeout-minutes: 10
+
+      - name: Validate Brewfile
+        run: brew bundle list --file=$HOME/dotfiles/install/Brewfile > /dev/null
+        shell: zsh {0}

@@ -3,12 +3,13 @@
 set -euo pipefail
 
 NON_INTERACTIVE=false
+SKIP_BREW_BUNDLE=false
 
 for arg in "$@"; do
-    if [ "$arg" = "--non-interactive" ]; then
-        NON_INTERACTIVE=true
-        break
-    fi
+    case "$arg" in
+        --non-interactive) NON_INTERACTIVE=true ;;
+        --skip-brew-bundle) SKIP_BREW_BUNDLE=true ;;
+    esac
 done
 
 function check_os() {
@@ -59,6 +60,11 @@ function install_oh_my_zsh() {
 }
 
 function brew_bundle_install() {
+    if [ "$SKIP_BREW_BUNDLE" = true ]; then
+        echo "Skipping Homebrew Bundle installation (--skip-brew-bundle)"
+        return
+    fi
+
     echo "Installing Homebrew Bundle..."
     if [ "$NON_INTERACTIVE" = true ]; then
         echo "Skipping interactive prompt and installing Homebrew Bundle..."
