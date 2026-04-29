@@ -1,4 +1,4 @@
-DEFAULT: install-all
+.DEFAULT_GOAL := install-all
 
 .PHONY: install-all
 install-all:
