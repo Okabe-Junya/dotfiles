@@ -6,24 +6,13 @@ ZSH_THEME="robbyrussell"
 
 plugins=(
     argocd
-    git
-    bundler
-    macos
-    rake
-    rbenv
-    ruby
     aws
     cp
     fzf
     gcloud
     gh
-    golang
-    helm
-    history
-    kind
-    kubectl
     kubectx
-    rails
+    macos
     ssh
 )
 

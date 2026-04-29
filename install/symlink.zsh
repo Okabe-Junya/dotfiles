@@ -13,7 +13,7 @@ ln -nfs "${HOME}/dotfiles/.config/gh" "${HOME}/.config/gh"
 # Clone directly: git clone git@github.com:Okabe-Junya/claude-config.git ~/.claude
 
 # zshrc
-if [ -f "${HOME}/.zshrc" ]; then
+if [ -f "${HOME}/.zshrc" ] && [ ! -L "${HOME}/.zshrc" ]; then
     mv "${HOME}/.zshrc" "${HOME}/.zshrc.bak"
 fi
 ln -nfs "${HOME}/dotfiles/.zshrc" "${HOME}/.zshrc"

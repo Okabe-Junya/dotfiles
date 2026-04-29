@@ -8,7 +8,6 @@ function check_homebrew() {
         echo "Please install Homebrew first!"
         exit 1
     else
-        sleep 1
         echo "Homebrew is already installed!"
     fi
 }
@@ -19,7 +18,6 @@ function check_lsd() {
         echo "Please install lsd first!"
         exit 1
     else
-        sleep 1
         echo "lsd is already installed!"
     fi
 }
@@ -30,7 +28,6 @@ function check_oh_my_zsh() {
         echo "Please install Oh My Zsh first!"
         exit 1
     else
-        sleep 1
         echo "Oh My Zsh is already installed!"
     fi
 }
