@@ -49,7 +49,7 @@
       "matchDepTypes": [
         "action"
       ],
-      "pinDigests": false
+      "pinDigests": true
     }
   ]
 }
