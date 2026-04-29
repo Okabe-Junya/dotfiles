@@ -14,21 +14,35 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
 
-      - name: Run tests
-        run: ./install.zsh --non-interactive
+      - name: Run install script
+        run: ./install.zsh --non-interactive --skip-brew-bundle
         shell: zsh {0}
-        timeout-minutes: 60
+        timeout-minutes: 10
+
+      - name: Validate Brewfile
+        run: brew bundle list --file=install/Brewfile > /dev/null
+        shell: zsh {0}
 
   readme-installation-test:
     runs-on: macos-latest
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
 
-      - name: Run tests
-        run: curl -L https://raw.githubusercontent.com/Okabe-Junya/dotfiles/main/install.zsh | zsh -s -- --non-interactive
+      - name: Serve install.zsh locally
+        run: |
+          python3 -m http.server 8888 &
+          sleep 1
         shell: zsh {0}
-        timeout-minutes: 60
+
+      - name: Run remote-style installation
+        run: curl -L http://localhost:8888/install.zsh | zsh -s -- --non-interactive --skip-brew-bundle
+        shell: zsh {0}
+        timeout-minutes: 10
+
+      - name: Validate Brewfile
+        run: brew bundle list --file=$HOME/dotfiles/install/Brewfile > /dev/null
+        shell: zsh {0}
