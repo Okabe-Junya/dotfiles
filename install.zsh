@@ -88,6 +88,16 @@ function initialize_symbolic_links() {
     source "$HOME/dotfiles/install/symlink.zsh"
 }
 
+function configure_macos() {
+    local macos_script="$HOME/dotfiles/install/macos.zsh"
+    if [ -f "$macos_script" ]; then
+        echo "Configuring macOS system preferences..."
+        source "$macos_script"
+    else
+        echo "macOS preferences script not found, skipping..."
+    fi
+}
+
 function install() {
     check_os
     install_homebrew
@@ -95,6 +105,7 @@ function install() {
     brew_bundle_install
     install_oh_my_zsh
     initialize_symbolic_links
+    configure_macos
 
     echo "Installation is complete!"
 }

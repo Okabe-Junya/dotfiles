@@ -15,6 +15,11 @@ dependency-check:
 	@echo "Checking dependencies"
 	./.zsh/dependency-check.zsh
 
+.PHONY: macos
+macos:
+	@echo "Applying macOS system preferences"
+	./install/macos.zsh
+
 .PHONY: help
 help:
 	@echo "Usage: make [target]"
@@ -23,4 +28,5 @@ help:
 	@echo "  install-all: Install all dependencies and setup"
 	@echo "  symlink: Create symlinks"
 	@echo "  dependency-check: Check dependencies"
+	@echo "  macos: Apply macOS system preferences"
 	@echo "  help: Show this help message"
