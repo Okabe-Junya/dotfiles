@@ -69,6 +69,11 @@ function initialize_symbolic_links() {
     source "./install/symlink.zsh"
 }
 
+function configure_macos() {
+    echo "Configuring macOS system preferences..."
+    source "./install/macos.zsh"
+}
+
 function brew_bundle_install() {
     echo "Installing Homebrew Bundle..."
     current_dir=$(pwd)
@@ -100,6 +105,7 @@ function install() {
     install_oh_my_zsh
     brew_bundle_install
     initialize_symbolic_links
+    configure_macos
 
     echo "Installation is complete!"
 }
