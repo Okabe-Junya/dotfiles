@@ -89,8 +89,13 @@ function initialize_symbolic_links() {
 }
 
 function configure_macos() {
-    echo "Configuring macOS system preferences..."
-    source "$HOME/dotfiles/install/macos.zsh"
+    local macos_script="$HOME/dotfiles/install/macos.zsh"
+    if [ -f "$macos_script" ]; then
+        echo "Configuring macOS system preferences..."
+        source "$macos_script"
+    else
+        echo "macOS preferences script not found, skipping..."
+    fi
 }
 
 function install() {
