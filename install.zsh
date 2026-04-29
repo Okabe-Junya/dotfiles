@@ -16,7 +16,6 @@ function check_os() {
         echo "This script is only for Mac OS X"
         exit 1
     else
-        sleep 1
         echo "This OS is Mac OS X!"
     fi
     if [ "$(uname -m)" != "arm64" ]; then
@@ -24,7 +23,6 @@ function check_os() {
         echo "This script is only for Apple Silicon"
         exit 1
     else
-        sleep 1
         echo "This Mac is Apple Silicon!"
     fi
 }
@@ -35,7 +33,6 @@ function clone_repository() {
         echo "Cloning dotfiles repository..."
         git clone "$GITHUB_REPOSITORY" "$HOME/dotfiles"
     else
-        sleep 1
         echo "dotfiles repository is already cloned!"
     fi
 }
@@ -45,7 +42,6 @@ function install_command_line_tools() {
         echo "Installing Xcode Command Line Tools..."
         xcode-select --install 2>/dev/null
     else
-        sleep 1
         echo "Xcode Command Line Tools is already installed!"
     fi
 }
@@ -55,7 +51,6 @@ function install_homebrew() {
         echo "Installing Homebrew for Apple Silicon..."
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" 2>/dev/null
     else
-        sleep 1
         echo "Homebrew for Apple Silicon is already installed!"
     fi
 }
@@ -65,7 +60,6 @@ function install_oh_my_zsh() {
         echo "Installing Oh My Zsh..."
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     else
-        sleep 1
         echo "Oh My Zsh is already installed!"
     fi
 }
