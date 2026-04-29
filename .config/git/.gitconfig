@@ -28,7 +28,5 @@
 
 [pager]
         difftool = true
-[http]
-	cookiefile = abc
 [commit]
 	gpgsign = true
