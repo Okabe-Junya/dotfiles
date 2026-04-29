@@ -1,13 +1,28 @@
 #!/usr/bin/env zsh
 
+# Lazy initialization for version managers to speed up shell startup.
+# The wrapper function is replaced by the real init on first invocation.
+
 if command -v pyenv 1>/dev/null 2>&1; then
-    eval "$(pyenv init -)"
+    pyenv() {
+        unfunction pyenv
+        eval "$(command pyenv init -)"
+        pyenv "$@"
+    }
 fi
 if command -v nodenv 1>/dev/null 2>&1; then
-    eval "$(nodenv init -)"
+    nodenv() {
+        unfunction nodenv
+        eval "$(command nodenv init -)"
+        nodenv "$@"
+    }
 fi
 if command -v rbenv 1>/dev/null 2>&1; then
-    eval "$(rbenv init -)"
+    rbenv() {
+        unfunction rbenv
+        eval "$(command rbenv init -)"
+        rbenv "$@"
+    }
 fi
 if command -v direnv 1>/dev/null 2>&1; then
     eval "$(direnv hook zsh)"
