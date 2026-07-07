@@ -2,6 +2,9 @@ vendor/
 
 .config/*
 !.config/gh/
+# gh writes auth tokens into hosts.yml when the OS keyring is unavailable; never
+# track it in this public repo. Only config.yml (no secrets) is versioned.
+.config/gh/hosts.yml
 !.config/git/
 !.config/latex/
 !.config/claude/
