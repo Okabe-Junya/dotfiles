@@ -14,8 +14,13 @@ auto_switch = true
 delivery = "system"
 
 [ui.sound]
-# Desktop notifications only — no sound on agent state changes.
-enabled = false
+# needs-attention = macOS "Glass", agent-finished = macOS "Blow".
+# The mp3s are generated locally by install/symlink.zsh from
+# /System/Library/Sounds (Apple sounds are not redistributable, so they
+# are never committed). Paths resolve relative to this config file.
+enabled = true
+done_path = "sounds/done.mp3"
+request_path = "sounds/request.mp3"
 
 [experimental]
 # Keep the macOS IME candidate window anchored to the cursor in agent panes
