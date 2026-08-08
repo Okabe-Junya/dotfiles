@@ -13,6 +13,10 @@ auto_switch = true
 # Surface agent finished / needs-attention events via macOS Notification Center.
 delivery = "system"
 
+[ui.sound]
+# Desktop notifications only — no sound on agent state changes.
+enabled = false
+
 [experimental]
 # Keep the macOS IME candidate window anchored to the cursor in agent panes
 # that paint their own cursor (Claude Code).
@@ -46,3 +50,6 @@ type = "popup"
 command = "k9s"
 width = "90%"
 height = "90%"
+
+[ui]
+agent_panel_sort = "spaces"

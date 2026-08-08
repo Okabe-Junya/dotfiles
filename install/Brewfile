@@ -73,6 +73,9 @@ brew "ffmpeg"
 # Terminal enhancements
 brew "herdr"
 brew "neovim"
+# macOS Notification Center delivery for herdr's system notifications
+# (avoids the osascript/Script Editor fallback)
+brew "terminal-notifier"
 
 # Fonts and GUI applications
 cask "claude-code"
