@@ -21,6 +21,15 @@ if [ ! -d "${HOME}/.config/herdr" ]; then
     mkdir -p "${HOME}/.config/herdr"
 fi
 ln -nfs "${HOME}/dotfiles/.config/herdr/config.toml" "${HOME}/.config/herdr/config.toml"
+# Generate herdr notification sounds from macOS system sounds. Generated
+# locally and never committed: Apple's sound files are not redistributable.
+if [[ "$(uname)" == "Darwin" ]] && command -v ffmpeg >/dev/null; then
+    mkdir -p "${HOME}/.config/herdr/sounds"
+    ffmpeg -i /System/Library/Sounds/Glass.aiff -codec:a libmp3lame -qscale:a 4 \
+        "${HOME}/.config/herdr/sounds/request.mp3" -loglevel error -y
+    ffmpeg -i /System/Library/Sounds/Blow.aiff -codec:a libmp3lame -qscale:a 4 \
+        "${HOME}/.config/herdr/sounds/done.mp3" -loglevel error -y
+fi
 
 # Claude Code configuration is managed separately:
 # https://github.com/Okabe-Junya/claude-config
