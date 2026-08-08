@@ -71,6 +71,7 @@ brew "glow"
 brew "ffmpeg"
 
 # Terminal enhancements
+brew "herdr"
 brew "neovim"
 
 # Fonts and GUI applications
