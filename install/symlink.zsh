@@ -15,6 +15,13 @@ if [ ! -d "${HOME}/.config/zed" ]; then
 fi
 ln -nfs "${HOME}/dotfiles/.config/zed/settings.json" "${HOME}/.config/zed/settings.json"
 
+# herdr (file-level symlink so herdr runtime artifacts under ~/.config/herdr
+# — sockets, logs, session state, plugin lock — don't leak into the repo)
+if [ ! -d "${HOME}/.config/herdr" ]; then
+    mkdir -p "${HOME}/.config/herdr"
+fi
+ln -nfs "${HOME}/dotfiles/.config/herdr/config.toml" "${HOME}/.config/herdr/config.toml"
+
 # Claude Code configuration is managed separately:
 # https://github.com/Okabe-Junya/claude-config
 # Clone directly: git clone git@github.com:Okabe-Junya/claude-config.git ~/.claude
