@@ -31,6 +31,15 @@ if [[ "$(uname)" == "Darwin" ]] && command -v ffmpeg >/dev/null; then
         "${HOME}/.config/herdr/sounds/done.mp3" -loglevel error -y
 fi
 
+# herdr desktop app (file-level symlinks: ~/.config/herdr-app also holds
+# runtime state and Herdr-owned files that the app rewrites on every start)
+mkdir -p "${HOME}/.config/herdr-app/mods"
+ln -nfs "${HOME}/dotfiles/.config/herdr-app/settings.json" "${HOME}/.config/herdr-app/settings.json"
+ln -nfs "${HOME}/dotfiles/.config/herdr-app/keys.json" "${HOME}/.config/herdr-app/keys.json"
+for mod in "${HOME}"/dotfiles/.config/herdr-app/mods/*(N/); do
+    ln -nfs "${mod}" "${HOME}/.config/herdr-app/mods/${mod:t}"
+done
+
 # Claude Code configuration is managed separately:
 # https://github.com/Okabe-Junya/claude-config
 # Clone directly: git clone git@github.com:Okabe-Junya/claude-config.git ~/.claude

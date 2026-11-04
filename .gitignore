@@ -10,7 +10,11 @@ vendor/
 !.config/claude/
 !.config/zed/
 !.config/herdr/
+!.config/herdr-app/
 
 # Override global gitignore to track CLAUDE.md in this repo
 !CLAUDE.md
 !.config/claude/CLAUDE.md
+# Herdr rewrites these into every mod folder on start
+.config/herdr-app/mods/*/gpui-kit.d.ts
+.config/herdr-app/mods/*/jsconfig.json
