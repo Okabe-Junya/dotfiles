@@ -33,11 +33,14 @@ fi
 
 # herdr desktop app (file-level symlinks: ~/.config/herdr-app also holds
 # runtime state and Herdr-owned files that the app rewrites on every start)
-mkdir -p "${HOME}/.config/herdr-app/mods"
+mkdir -p "${HOME}/.config/herdr-app/mods" "${HOME}/.config/herdr-app/layouts"
 ln -nfs "${HOME}/dotfiles/.config/herdr-app/settings.json" "${HOME}/.config/herdr-app/settings.json"
 ln -nfs "${HOME}/dotfiles/.config/herdr-app/keys.json" "${HOME}/.config/herdr-app/keys.json"
 for mod in "${HOME}"/dotfiles/.config/herdr-app/mods/*(N/); do
     ln -nfs "${mod}" "${HOME}/.config/herdr-app/mods/${mod:t}"
+done
+for layout in "${HOME}"/dotfiles/.config/herdr-app/layouts/*.json(N); do
+    ln -nfs "${layout}" "${HOME}/.config/herdr-app/layouts/${layout:t}"
 done
 
 # Claude Code configuration is managed separately:
