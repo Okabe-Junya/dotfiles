@@ -64,6 +64,7 @@
   "terminal": {
     "cmd-c": "terminal.copy",
     "cmd-v": "terminal.paste",
+    "cmd-f": "terminal.search",
     "ctrl-v": "terminal.paste_image",
     "alt-left": "send:\u001bb",
     "alt-right": "send:\u001bf",
