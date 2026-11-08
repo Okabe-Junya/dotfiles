@@ -451,7 +451,8 @@ export default class Spaces extends View {
   }
 
   render() {
-    const t = theme();
+    // herdr.d.ts types theme() as Record<string, string>; its values are hex colors.
+    const t = /** @type {Record<string, import("gpui-kit").Color>} */ (theme());
     const collapsed = narrow();
     const palette = ["ansi6", "ansi3", "ansi4", "ansi5", "ansi2", "ansi1"];
     const sp = spaces();

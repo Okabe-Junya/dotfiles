@@ -1,0 +1,24 @@
+{
+  // Mirrors the jsconfig.json Herdr writes into each mod folder.
+  // strictNullChecks stays off as Herdr's does: a view assigns its state in
+  // init(), which TypeScript cannot see as definite assignment.
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022"],
+    "checkJs": true,
+    "strict": true,
+    "strictNullChecks": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "noEmit": true
+  },
+  "include": ["types/gpui-kit.d.ts", "mods/*/*.js"],
+  // Clones of Herdr's shipped mods stay close to upstream so updates can be
+  // diffed in; tsconfig.clones.json checks them without annotations.
+  "exclude": ["mods/spaces-status"]
+}

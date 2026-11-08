@@ -1,0 +1,76 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "files": {
+    "includes": ["**", "!**/node_modules", "!**/types", "!**/gpui-kit.d.ts", "!**/jsconfig.json"]
+  },
+  "formatter": {
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 120
+  },
+  "javascript": {
+    "globals": ["localStorage"]
+  },
+  "linter": {
+    "rules": {
+      "preset": "recommended",
+      "correctness": {
+        "noUndeclaredVariables": "error",
+        "noUnusedImports": "error",
+        "noUnusedVariables": "error",
+        "noUnusedFunctionParameters": "error"
+      },
+      "style": {
+        "noParameterAssign": "error",
+        "noNonNullAssertion": "error",
+        "useConst": "error",
+        "useTemplate": "error",
+        "noUselessElse": "error",
+        "useCollapsedElseIf": "error",
+        "useNumberNamespace": "error",
+        "useBlockStatements": "error"
+      },
+      "suspicious": {
+        "noConsole": "error",
+        "noEmptyBlockStatements": "error",
+        "noImplicitAnyLet": "error",
+        "noEvolvingTypes": "error",
+        "useAwait": "error"
+      },
+      "complexity": {
+        "noExcessiveCognitiveComplexity": "error",
+        "noUselessStringConcat": "error",
+        "useSimplifiedLogicExpression": "error"
+      },
+      "nursery": {
+        "noFloatingPromises": "error",
+        "noMisusedPromises": "error"
+      }
+    }
+  },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
+  },
+  "overrides": [
+    {
+      "includes": ["mods/spaces-status/**"],
+      "formatter": { "enabled": false },
+      "assist": { "enabled": false },
+      "linter": {
+        "rules": {
+          "style": { "useBlockStatements": "off", "useNumberNamespace": "off" },
+          "suspicious": {
+            "noAssignInExpressions": "off",
+            "noEmptyBlockStatements": "off",
+            "useIterableCallbackReturn": "off"
+          },
+          "complexity": { "noExcessiveCognitiveComplexity": "off", "useSimplifiedLogicExpression": "off" }
+        }
+      }
+    }
+  ]
+}

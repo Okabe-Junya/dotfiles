@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "useUnknownInCatchVariables": false
+  },
+  "include": ["types/gpui-kit.d.ts", "mods/spaces-status/*.js"],
+  "exclude": []
+}
