@@ -1,1 +1,5 @@
-{ "place": "none", "title": "Open repo", "overlay": { "kind": "popup", "at": "top", "offset": 40, "width": 320, "height": 44 } }
+{
+  "place": "none",
+  "title": "Open repo",
+  "overlay": { "kind": "popup", "at": "top", "offset": 40, "width": 320, "height": 44 }
+}

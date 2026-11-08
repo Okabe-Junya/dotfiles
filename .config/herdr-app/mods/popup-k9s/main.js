@@ -2,33 +2,46 @@
 // keys.json opens this mod (mod.open:popup-k9s); it starts the program in
 // herdr-core, replaces itself with a terminal dialog, and that dialog closes
 // by itself when the program exits.
-import { View, div } from "gpui-kit";
-import { hc, props, closeOverlay, openOverlay, focused, home, theme } from "herdr";
+import { div, View } from "gpui-kit";
+import { closeOverlay, focused, hc, home, openOverlay, props, theme } from "herdr";
 
 const TITLE = "k9s";
 const ARGV = ["k9s"];
 const SIZE = { width: 0.9, height: 0.9 };
 
 export default class Popup extends View {
+  /** @type {string | null} */
+  error = null;
+
+  /**
+   * @param {import("gpui-shell").Props | undefined} _props
+   * @param {import("gpui-kit").AsyncContext} cx
+   */
   init(_props, cx) {
-    this.error = null;
     cx.spawn(async (cx) => {
       try {
         const cwd = focused()?.cwd ?? home();
         const r = await hc(["run", "--bg", "--json", "--rm", "--cwd", cwd, "--", ...ARGV]);
-        if (r.code !== 0) throw new Error(r.stderr.trim() || r.stdout.trim() || `hc run exited ${r.code}`);
+        if (r.code !== 0) {
+          throw new Error(r.stderr.trim() || r.stdout.trim() || `hc run exited ${r.code}`);
+        }
         const { address } = JSON.parse(r.stdout);
         closeOverlay(props().overlay);
-        openOverlay({ kind: "dialog", ...SIZE, layout: { id: "popup", type: "block", content: { terminal: address } } });
+        openOverlay({
+          kind: "dialog",
+          ...SIZE,
+          layout: { id: "popup", type: "block", content: { terminal: address } },
+        });
       } catch (e) {
-        this.error = String(e?.message ?? e);
+        this.error = e instanceof Error ? e.message : String(e);
         cx.notify();
       }
     });
   }
 
   render() {
-    const t = theme();
+    // herdr.d.ts types theme() as Record<string, string>; its values are hex colors.
+    const t = /** @type {Record<string, import("gpui-kit").Color>} */ (theme());
     return div()
       .size_full()
       .px(12)
