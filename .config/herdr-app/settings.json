@@ -1,5 +1,8 @@
 {
   "font": "Hack Nerd Font Mono",
+  "colors": {
+    "done": "#98c379"
+  },
   "sounds": {
     "enabled": true,
     "done": "../herdr/sounds/done.mp3",

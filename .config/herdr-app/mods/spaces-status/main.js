@@ -46,13 +46,15 @@ export function tone(t, status) {
   return t[status] ?? t.unknown;
 }
 
-// Idle spaces keep the letter avatar so the colors still tell spaces apart.
+// Only status avatars are filled, so a space color never reads as a status
+// color; idle spaces keep their color as an outlined letter.
+const INK = "#1b1d22";
 function avatar(w, fill, t) {
-  const box = (bg) => h_flex().size(18).flex_none().rounded(5).bg(bg).items_center().justify_center().text_size(10.5).font_bold().text_color("#ffffff");
-  if (w.status === "working") return box(fill).child(svg("mods/workspace-chrome/spinner.svg").size(12).text_color("#ffffff").spin(900));
-  if (w.status === "blocked") return box(t.blocked).child("!");
-  if (w.status === "done") return box(t.done).child(div().size(6).rounded(3).bg("#ffffff"));
-  return box(fill).child([...w.name][0]?.toUpperCase() ?? "?");
+  const box = () => h_flex().size(18).flex_none().rounded(5).items_center().justify_center().text_size(10.5).font_bold();
+  if (w.status === "working") return box().bg(t.working).child(svg("mods/workspace-chrome/spinner.svg").size(12).text_color(INK).spin(900));
+  if (w.status === "blocked") return box().bg(t.blocked).text_color(INK).child("!");
+  if (w.status === "done") return box().bg(t.done).child(div().size(6).rounded(3).bg(INK));
+  return box().border(1.5).border_color(fill).text_color(fill).child([...w.name][0]?.toUpperCase() ?? "?");
 }
 
 export default class Spaces extends View {
