@@ -11,6 +11,8 @@ if command -v pyenv 1>/dev/null 2>&1; then
     }
 fi
 if command -v nodenv 1>/dev/null 2>&1; then
+    # Shims must be on PATH at startup so shebang `node` (e.g. bun global CLIs) resolves before nodenv is first called.
+    export PATH="$HOME/.nodenv/shims:$PATH"
     nodenv() {
         unfunction nodenv
         eval "$(command nodenv init -)"
