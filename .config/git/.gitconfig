@@ -1,7 +1,6 @@
 [user]
 	name = Junya Okabe
-	email = junya.okabe.ig@gmail.com
-	signingkey = 6B5D4AAC2A6B2534
+	email = 86868255+Okabe-Junya@users.noreply.github.com
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -30,3 +29,7 @@
         difftool = true
 [commit]
 	gpgsign = true
+
+# Machine-local overrides; git skips the include if the file is absent.
+[include]
+	path = ~/.gitconfig.local
