@@ -84,3 +84,8 @@ cask "google-chrome"
 cask "google-cloud-sdk"
 cask "visual-studio-code"
 cask "zed"
+
+# Go tools
+go "golang.org/x/tools/gopls"
+go "golang.org/x/vuln/cmd/govulncheck"
+go "honnef.co/go/tools/cmd/staticcheck"
