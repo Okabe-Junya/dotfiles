@@ -30,11 +30,13 @@ brew "protobuf"
 
 # Programming languages and version managers
 brew "go"
+brew "mise"
 brew "nodenv"
 brew "openjdk"
 brew "pyenv"
 brew "rbenv"
 brew "rust"
+brew "uv"
 
 # Database and related tools
 brew "mysql"
