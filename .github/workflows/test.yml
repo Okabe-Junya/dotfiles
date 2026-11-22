@@ -19,10 +19,23 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
+      # install.zsh clones main into ~/dotfiles when it is missing, which
+      # would test main instead of this checkout. The real ~/.config/gh
+      # mimics a machine where `gh auth login` ran before installing.
+      - name: Prepare home directory
+        run: |
+          ln -s "$GITHUB_WORKSPACE" "$HOME/dotfiles"
+          mkdir -p "$HOME/.config/gh"
+        shell: zsh {0}
+
       - name: Run install script
         run: ./install.zsh --non-interactive --skip-brew-bundle
         shell: zsh {0}
         timeout-minutes: 10
+
+      - name: Check config symlinks
+        run: test -L "$HOME/.config/gh" -a -L "$HOME/.config/git" -a -L "$HOME/.zshrc"
+        shell: zsh {0}
 
       - name: Validate Brewfile
         run: brew bundle list --file=install/Brewfile > /dev/null
