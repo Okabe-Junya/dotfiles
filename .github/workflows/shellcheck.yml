@@ -19,6 +19,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
 
       - name: shellcheck
         uses: reviewdog/action-shellcheck@950c9d71535c8c49e5c029c33a438ade63b9009c # v1.35.1
