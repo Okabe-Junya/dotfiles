@@ -26,8 +26,8 @@ jobs:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review
           path: "."
-          pattern: |
-            "*.sh"
-            "*.zsh"
+          # ShellCheck does not support zsh (SC1071), so only .sh files are checked.
+          pattern: "*.sh"
           exclude: "./.git/*"
           check_all_files_with_shebangs: "false"
+          fail_level: any
